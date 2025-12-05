@@ -27,9 +27,31 @@ npm run lint
 Write-Host "🧪 Running tests..." -ForegroundColor Yellow
 npm test -- --run
 
-# Start dev server
+# Start dev server in background
 Write-Host ""
-Write-Host "🚀 Starting development server..." -ForegroundColor Green
+Write-Host "🚀 Starting development server in background..." -ForegroundColor Green
 Write-Host "   The app will be available at http://localhost:5173" -ForegroundColor Cyan
 Write-Host ""
-npm run dev
+
+# Start dev server as a background job
+$devJob = Start-Job -ScriptBlock {
+    Set-Location $using:PWD
+    npm run dev 2>&1
+}
+
+# Wait a moment for the server to start
+Start-Sleep -Seconds 3
+
+# Check if server started successfully
+$jobState = Get-Job -Id $devJob.Id | Select-Object -ExpandProperty State
+if ($jobState -eq "Running") {
+    Write-Host "✓ Dev server started (Job ID: $($devJob.Id))" -ForegroundColor Green
+    Write-Host "  To view output: Receive-Job -Id $($devJob.Id)" -ForegroundColor Gray
+    Write-Host "  To stop: Stop-Job -Id $($devJob.Id); Remove-Job -Id $($devJob.Id)" -ForegroundColor Gray
+}
+else {
+    Write-Host "⚠ Dev server may have failed to start. Check with: Receive-Job -Id $($devJob.Id)" -ForegroundColor Yellow
+}
+
+Write-Host ""
+Write-Host "✅ Environment ready! Dev server running in background." -ForegroundColor Green

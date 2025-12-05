@@ -50,8 +50,10 @@ Read these files in order:
 
 ### 3. Start the Environment
 
+**IMPORTANT**: The init script starts a dev server. When calling `run_in_terminal`, you do NOT need to set `isBackground: true` - the init script handles backgrounding the server automatically and will return control.
+
 ```bash
-# Run the init script
+# Run the init script (it backgrounds the dev server automatically)
 ./init.sh  # or .\init.ps1 on Windows
 ```
 
@@ -59,6 +61,11 @@ If init script doesn't exist or fails:
 - Document the issue
 - Attempt to start the dev environment manually
 - Create/fix the init script as first priority
+
+**Note**: If you need to start just the dev server separately, use `run_in_terminal` with `isBackground: true`:
+```
+npm run dev  # with isBackground: true
+```
 
 ### 4. Smoke Test
 
