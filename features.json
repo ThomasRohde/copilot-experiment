@@ -26,9 +26,9 @@
                 "All 52 cards can be represented",
                 "Type safety prevents invalid card combinations"
             ],
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T10:00:00.000Z",
+            "verifiedBy": "agent-session-4"
         },
         {
             "id": "F003",
@@ -40,9 +40,9 @@
                 "All 52 cards present after shuffle",
                 "No duplicate cards after shuffle"
             ],
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T10:00:00.000Z",
+            "verifiedBy": "agent-session-4"
         },
         {
             "id": "F004",
@@ -84,9 +84,9 @@
                 "Kings can be placed on empty tableau piles",
                 "Multiple face-up cards can be moved together"
             ],
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T10:00:00.000Z",
+            "verifiedBy": "agent-session-4"
         },
         {
             "id": "F007",
@@ -99,9 +99,9 @@
                 "Cards must be one rank higher than top card",
                 "Only single cards can be moved to foundation"
             ],
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T10:00:00.000Z",
+            "verifiedBy": "agent-session-4"
         },
         {
             "id": "F008",
@@ -112,9 +112,9 @@
                 "When top card is moved, next card flips face up",
                 "Flip happens automatically after valid move"
             ],
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T10:00:00.000Z",
+            "verifiedBy": "agent-session-4"
         },
         {
             "id": "F009",
@@ -126,9 +126,9 @@
                 "Win dialog/animation shown on victory",
                 "Game statistics updated on win"
             ],
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T10:00:00.000Z",
+            "verifiedBy": "agent-session-4"
         },
         {
             "id": "F010",
@@ -141,9 +141,9 @@
                 "Multiple undos supported",
                 "Undo restores card face states correctly"
             ],
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T10:00:00.000Z",
+            "verifiedBy": "agent-session-4"
         },
         {
             "id": "F011",
@@ -200,9 +200,9 @@
                 "Card backs stored as SVG",
                 "User can select card back in settings"
             ],
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T10:00:00.000Z",
+            "verifiedBy": "agent-session-4"
         },
         {
             "id": "F015",
@@ -289,9 +289,9 @@
                 "Card back selection",
                 "Settings persist in localStorage"
             ],
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T10:00:00.000Z",
+            "verifiedBy": "agent-session-4"
         },
         {
             "id": "F021",
@@ -304,9 +304,9 @@
                 "Store actions for all game operations",
                 "State shape is well-typed"
             ],
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T10:00:00.000Z",
+            "verifiedBy": "agent-session-4"
         },
         {
             "id": "F022",
@@ -319,9 +319,9 @@
                 "Settings persisted separately",
                 "Graceful handling of corrupted data"
             ],
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T10:00:00.000Z",
+            "verifiedBy": "agent-session-4"
         },
         {
             "id": "F023",
@@ -420,9 +420,9 @@
                 "Controls documented",
                 "Accessible from main menu"
             ],
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T10:00:00.000Z",
+            "verifiedBy": "agent-session-4"
         },
         {
             "id": "F030",
@@ -434,9 +434,9 @@
                 "User-friendly error message displayed",
                 "Option to start new game on error"
             ],
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T10:00:00.000Z",
+            "verifiedBy": "agent-session-4"
         },
         {
             "id": "F031",
@@ -456,8 +456,8 @@
     ],
     "metadata": {
         "createdAt": "2025-12-05T00:00:00.000Z",
-        "lastUpdated": "2025-12-05T12:00:00.000Z",
+        "lastUpdated": "2025-12-05T10:00:00.000Z",
         "totalFeatures": 31,
-        "passingFeatures": 15
+        "passingFeatures": 27
     }
 }

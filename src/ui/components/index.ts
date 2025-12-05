@@ -5,3 +5,4 @@ export { GameStats } from './GameStats';
 export { GameControls } from './GameControls';
 export { SettingsPanel } from './SettingsPanel';
 export { WinModal } from './WinModal';
+export { ErrorBoundary } from './ErrorBoundary';
