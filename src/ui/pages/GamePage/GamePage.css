@@ -15,6 +15,29 @@
     align-items: center;
     padding: 8px 16px;
     margin-bottom: 16px;
+    gap: 12px;
+}
+
+/* Back button for standalone mode (F039) */
+.game-page__back-button {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.game-page__back-button:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.game-page__back-button:active {
+    transform: scale(0.98);
 }
 
 .game-page__table {

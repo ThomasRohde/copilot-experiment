@@ -1,11 +1,14 @@
 import { useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useGameStore } from '@/state/gameStore';
 import { Pile, StockPile, GameStats, GameControls, SettingsPanel, WinModal } from '@/ui/components';
+import { useStandaloneMode } from '@/ui/hooks';
 import './GamePage.css';
 
 export function GamePage() {
     const [searchParams, setSearchParams] = useSearchParams();
+    const navigate = useNavigate();
+    const { isStandalone } = useStandaloneMode();
     const newGame = useGameStore((state) => state.newGame);
     const waste = useGameStore((state) => state.waste);
     const foundations = useGameStore((state) => state.foundations);
@@ -25,9 +28,24 @@ export function GamePage() {
         clearSelection();
     };
 
+    const handleBack = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        navigate('/');
+    };
+
     return (
         <div className="game-page" onClick={handleTableClick}>
             <header className="game-page__header">
+                {/* Show back button in standalone mode (F039) */}
+                {isStandalone && (
+                    <button 
+                        className="game-page__back-button" 
+                        onClick={handleBack}
+                        aria-label="Back to home"
+                    >
+                        ← Home
+                    </button>
+                )}
                 <GameControls />
                 <GameStats />
                 <SettingsPanel />
