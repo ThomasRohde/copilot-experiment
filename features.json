@@ -696,7 +696,7 @@
                 "F041"
             ],
             "acceptanceCriteria": [
-                "Smoke test verifies https://thomasrohde.github.io/klondike/ loads",
+                "Smoke test verifies https://thomasrohde.github.io/copilot-experiment/ loads",
                 "Test confirms game page is accessible at /klondike/game",
                 "Test verifies PWA manifest is served correctly",
                 "Test confirms all card assets load from correct paths"

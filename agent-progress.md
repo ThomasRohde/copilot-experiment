@@ -64,7 +64,7 @@ npm run preview    # Preview production build
 
 #### Completed
 - Added 6 new features for GitHub Pages deployment (F040-F045)
-- Target deployment URL: https://thomasrohde.github.io/klondike
+- Target deployment URL: https://thomasrohde.github.io/copilot-experiment
 
 #### Features Added
 
@@ -135,7 +135,7 @@ npm run preview    # Preview production build
 **Estimated Effort**: Medium
 
 **Acceptance Criteria**:
-1. Smoke test verifies https://thomasrohde.github.io/klondike/ loads
+1. Smoke test verifies https://thomasrohde.github.io/copilot-experiment/ loads
 2. Test confirms game page is accessible at /klondike/game
 3. Test verifies PWA manifest is served correctly
 4. Test confirms all card assets load from correct paths

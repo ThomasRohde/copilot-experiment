@@ -9,7 +9,7 @@
 [![Built with Copilot](https://img.shields.io/badge/Built%20with-GitHub%20Copilot-blue?logo=github)](https://github.com/features/copilot)
 [![Inspired by Anthropic](https://img.shields.io/badge/Inspired%20by-Anthropic%20Research-orange)](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Play Demo](https://img.shields.io/badge/Play%20Demo-Klondike%20Solitaire-brightgreen)](https://thomasrohde.github.io/klondike/)
+[![Play Demo](https://img.shields.io/badge/Play%20Demo-Klondike%20Solitaire-brightgreen)](https://thomasrohde.github.io/copilot-experiment/)
 
 [The Problem](#the-problem) • [The Solution](#the-solution) • [Quick Start](#-quick-start) • [Use in Your Project](#-use-in-your-own-project) • [Demo: Klondike Solitaire](#-demo-klondike-solitaire)
 
@@ -229,7 +229,7 @@ This creates:
 
 This repository includes a fully-functional Klondike Solitaire game, built entirely using the framework across multiple agent sessions.
 
-**🎮 [Play the live demo →](https://thomasrohde.github.io/klondike/)**
+**🎮 [Play the live demo →](https://thomasrohde.github.io/copilot-experiment/)**
 
 ### Features Implemented (39/45 ✅)
 
@@ -244,7 +244,7 @@ This repository includes a fully-functional Klondike Solitaire game, built entir
 
 The game is automatically deployed to GitHub Pages on every push to the `master` branch.
 
-- **Live URL**: https://thomasrohde.github.io/klondike/
+- **Live URL**: https://thomasrohde.github.io/copilot-experiment/
 - **Deployment**: GitHub Actions workflow (`.github/workflows/deploy.yml`)
 - **PWA**: Installable as a standalone app on desktop and mobile
 

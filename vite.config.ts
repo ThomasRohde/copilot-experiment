@@ -5,7 +5,7 @@ import path from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
-    base: '/klondike/',
+    base: '/copilot-experiment/',
     plugins: [
         react(),
         VitePWA({
@@ -22,8 +22,8 @@ export default defineConfig({
                 background_color: '#1a5f2a',
                 display: 'standalone',
                 orientation: 'any',
-                scope: '/klondike/',
-                start_url: '/klondike/',
+                scope: '/copilot-experiment/',
+                start_url: '/copilot-experiment/',
                 icons: [
                     {
                         src: 'pwa-192x192.png',
@@ -47,14 +47,14 @@ export default defineConfig({
                         name: 'New Game',
                         short_name: 'New',
                         description: 'Start a new game of Klondike Solitaire',
-                        url: '/klondike/game?action=new',
+                        url: '/copilot-experiment/game?action=new',
                         icons: [{ src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png' }],
                     },
                     {
                         name: 'Continue Game',
                         short_name: 'Continue',
                         description: 'Resume your last saved game',
-                        url: '/klondike/game',
+                        url: '/copilot-experiment/game',
                         icons: [{ src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png' }],
                     },
                 ],
