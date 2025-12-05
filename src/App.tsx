@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HomePage, GamePage, HelpPage } from '@/ui/pages';
-import { ErrorBoundary } from '@/ui/components';
+import { ErrorBoundary, OfflineIndicator } from '@/ui/components';
 import './App.css';
 
 export function App() {
@@ -12,6 +12,7 @@ export function App() {
                     <Route path="/game" element={<GamePage />} />
                     <Route path="/help" element={<HelpPage />} />
                 </Routes>
+                <OfflineIndicator />
             </BrowserRouter>
         </ErrorBoundary>
     );
