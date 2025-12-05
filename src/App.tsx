@@ -4,11 +4,14 @@ import { ErrorBoundary, OfflineIndicator, InstallPrompt, UpdateNotification } fr
 import { StandaloneModeProvider } from '@/ui/hooks';
 import './App.css';
 
+// Base path for GitHub Pages deployment
+const basename = import.meta.env.BASE_URL;
+
 export function App() {
     return (
         <ErrorBoundary>
             <StandaloneModeProvider>
-                <BrowserRouter>
+                <BrowserRouter basename={basename}>
                     <Routes>
                         <Route path="/" element={<HomePage />} />
                         <Route path="/game" element={<GamePage />} />

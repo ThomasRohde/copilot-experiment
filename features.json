@@ -622,9 +622,9 @@
                 "Production build works locally with 'npm run preview'"
             ],
             "estimatedEffort": "small",
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T17:25:00.000Z",
+            "verifiedBy": "agent-session-11"
         },
         {
             "id": "F041",
@@ -642,9 +642,9 @@
                 "Build artifacts include all PWA assets"
             ],
             "estimatedEffort": "medium",
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T17:23:00.000Z",
+            "verifiedBy": "agent-session-11"
         },
         {
             "id": "F042",
@@ -662,9 +662,9 @@
                 "Browser back/forward navigation works after redirect"
             ],
             "estimatedEffort": "small",
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T17:22:00.000Z",
+            "verifiedBy": "agent-session-11"
         },
         {
             "id": "F043",
@@ -682,9 +682,9 @@
                 "URL shows correct path (e.g., /klondike/game not just /game)"
             ],
             "estimatedEffort": "small",
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T17:20:00.000Z",
+            "verifiedBy": "agent-session-11"
         },
         {
             "id": "F044",
@@ -721,15 +721,15 @@
                 "Link to live demo in README header"
             ],
             "estimatedEffort": "small",
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T17:24:00.000Z",
+            "verifiedBy": "agent-session-11"
         }
     ],
     "metadata": {
         "createdAt": "2025-12-05T00:00:00.000Z",
-        "lastUpdated": "2025-12-05T18:00:00.000Z",
+        "lastUpdated": "2025-12-05T17:26:00.000Z",
         "totalFeatures": 45,
-        "passingFeatures": 39
+        "passingFeatures": 44
     }
 }
