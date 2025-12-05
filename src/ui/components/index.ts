@@ -7,3 +7,4 @@ export { SettingsPanel } from './SettingsPanel';
 export { WinModal } from './WinModal';
 export { ErrorBoundary } from './ErrorBoundary';
 export { OfflineIndicator } from './OfflineIndicator';
+export { InstallPrompt } from './InstallPrompt';
