@@ -9,7 +9,10 @@ export default defineConfig({
         react(),
         VitePWA({
             registerType: 'autoUpdate',
-            includeAssets: ['favicon.svg', 'apple-touch-icon.svg', 'cards/**/*.svg'],
+            devOptions: {
+                enabled: true, // Enable PWA in dev mode for testing
+            },
+            includeAssets: ['favicon.svg', 'apple-touch-icon.png', 'cards/**/*.svg'],
             manifest: {
                 name: 'Klondike Solitaire',
                 short_name: 'Solitaire',
@@ -21,20 +24,20 @@ export default defineConfig({
                 start_url: '/',
                 icons: [
                     {
-                        src: 'pwa-192x192.svg',
+                        src: 'pwa-192x192.png',
                         sizes: '192x192',
-                        type: 'image/svg+xml',
+                        type: 'image/png',
                     },
                     {
-                        src: 'pwa-512x512.svg',
+                        src: 'pwa-512x512.png',
                         sizes: '512x512',
-                        type: 'image/svg+xml',
+                        type: 'image/png',
                     },
                     {
-                        src: 'pwa-512x512.svg',
+                        src: 'pwa-512x512.png',
                         sizes: '512x512',
-                        type: 'image/svg+xml',
-                        purpose: 'any maskable',
+                        type: 'image/png',
+                        purpose: 'maskable',
                     },
                 ],
                 shortcuts: [
@@ -43,14 +46,14 @@ export default defineConfig({
                         short_name: 'New',
                         description: 'Start a new game of Klondike Solitaire',
                         url: '/game?action=new',
-                        icons: [{ src: 'pwa-192x192.svg', sizes: '192x192' }],
+                        icons: [{ src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png' }],
                     },
                     {
                         name: 'Continue Game',
                         short_name: 'Continue',
                         description: 'Resume your last saved game',
                         url: '/game',
-                        icons: [{ src: 'pwa-192x192.svg', sizes: '192x192' }],
+                        icons: [{ src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png' }],
                     },
                 ],
             },
