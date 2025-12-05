@@ -14,7 +14,6 @@ interface PileProps {
 export function Pile({ pile, spread = false, maxVisible }: PileProps) {
   const [isDragOver, setIsDragOver] = useState(false);
   const moveCards = useGameStore((state) => state.moveCards);
-  const selectCard = useGameStore((state) => state.selectCard);
   const clearSelection = useGameStore((state) => state.clearSelection);
   const selectedCardIds = useSelectedCardIds();
 

@@ -12,7 +12,6 @@ import {
   createInitialGameState,
   findPileById,
   findCardPile,
-  getTopCard,
 } from '@/game/game';
 import {
   canMoveToTableau,
