@@ -67,12 +67,12 @@ export function UpdateNotification() {
             // Tell the waiting service worker to skip waiting
             registration.waiting.postMessage({ type: 'SKIP_WAITING' });
         }
-        
+
         // Listen for the controlling service worker changing
         navigator.serviceWorker.addEventListener('controllerchange', () => {
             window.location.reload();
         });
-        
+
         // Fallback: reload after a short delay
         setTimeout(() => {
             window.location.reload();
@@ -98,14 +98,14 @@ export function UpdateNotification() {
                 </div>
             </div>
             <div className="update-notification__actions">
-                <button 
+                <button
                     className="update-notification__button update-notification__button--dismiss"
                     onClick={handleDismiss}
                     aria-label="Dismiss update notification"
                 >
                     Later
                 </button>
-                <button 
+                <button
                     className="update-notification__button update-notification__button--refresh"
                     onClick={handleRefresh}
                     aria-label="Refresh to update"

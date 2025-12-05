@@ -39,7 +39,7 @@ export function StandaloneModeProvider({ children }: Props) {
     useEffect(() => {
         // Listen for display mode changes
         const mediaQueryList = window.matchMedia('(display-mode: standalone)');
-        
+
         const handleChange = () => {
             setDisplayMode(getDisplayMode());
         };

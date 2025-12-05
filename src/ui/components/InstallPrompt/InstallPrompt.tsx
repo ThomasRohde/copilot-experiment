@@ -44,7 +44,7 @@ export function InstallPrompt() {
     const wasDismissedRecently = useCallback(() => {
         const dismissedAt = localStorage.getItem(DISMISS_KEY);
         if (!dismissedAt) return false;
-        
+
         const dismissTime = parseInt(dismissedAt, 10);
         return Date.now() - dismissTime < DISMISS_DURATION;
     }, []);
@@ -52,7 +52,7 @@ export function InstallPrompt() {
     useEffect(() => {
         // Log initial display mode (F038)
         logPWAEvent('app_loaded', { displayMode: getDisplayMode() });
-        
+
         // Check if app is already installed
         if (window.matchMedia('(display-mode: standalone)').matches) {
             setIsInstalled(true);
@@ -65,10 +65,10 @@ export function InstallPrompt() {
             e.preventDefault();
             // Stash the event so it can be triggered later
             setDeferredPrompt(e as BeforeInstallPromptEvent);
-            
+
             // Log that install prompt is available (F038)
             logPWAEvent('install_prompt_available');
-            
+
             // Only show our custom prompt if not recently dismissed
             if (!wasDismissedRecently()) {
                 setShowPrompt(true);
@@ -100,20 +100,20 @@ export function InstallPrompt() {
 
         // Log that user clicked install (F038)
         logPWAEvent('install_button_clicked');
-        
+
         // Show the native install prompt
         await deferredPrompt.prompt();
-        
+
         // Wait for the user's response
         const { outcome } = await deferredPrompt.userChoice;
-        
+
         // Log user's choice (F038)
         logPWAEvent('install_prompt_response', { outcome });
-        
+
         if (outcome === 'accepted') {
             setShowPrompt(false);
         }
-        
+
         // Clear the deferred prompt - can only be used once
         setDeferredPrompt(null);
     };
@@ -141,14 +141,14 @@ export function InstallPrompt() {
                 </div>
             </div>
             <div className="install-prompt__actions">
-                <button 
+                <button
                     className="install-prompt__button install-prompt__button--dismiss"
                     onClick={handleDismiss}
                     aria-label="Dismiss install prompt"
                 >
                     Later
                 </button>
-                <button 
+                <button
                     className="install-prompt__button install-prompt__button--install"
                     onClick={() => { void handleInstall(); }}
                     aria-label="Install app"

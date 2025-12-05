@@ -469,9 +469,9 @@
                 "Banner hides automatically after successful installation"
             ],
             "estimatedEffort": "medium",
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T16:45:00.000Z",
+            "verifiedBy": "agent-session-8"
         },
         {
             "id": "F033",
@@ -488,9 +488,9 @@
                 "Indicator does not block gameplay"
             ],
             "estimatedEffort": "small",
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T16:40:00.000Z",
+            "verifiedBy": "agent-session-8"
         },
         {
             "id": "F034",
@@ -507,9 +507,9 @@
                 "Update applies after page refresh"
             ],
             "estimatedEffort": "medium",
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T16:46:00.000Z",
+            "verifiedBy": "agent-session-8"
         },
         {
             "id": "F035",
@@ -526,9 +526,9 @@
                 "Shortcuts appear in OS app context menu (right-click icon)"
             ],
             "estimatedEffort": "small",
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T16:32:00.000Z",
+            "verifiedBy": "agent-session-8"
         },
         {
             "id": "F036",
@@ -546,9 +546,9 @@
                 "App name displays correctly on iOS home screen"
             ],
             "estimatedEffort": "medium",
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T16:35:00.000Z",
+            "verifiedBy": "agent-session-8"
         },
         {
             "id": "F037",
@@ -565,9 +565,9 @@
                 "Console logs SW registration status in development"
             ],
             "estimatedEffort": "medium",
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T16:46:00.000Z",
+            "verifiedBy": "agent-session-8"
         },
         {
             "id": "F038",
@@ -584,9 +584,9 @@
                 "Display mode is logged for debugging purposes"
             ],
             "estimatedEffort": "small",
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T16:47:00.000Z",
+            "verifiedBy": "agent-session-8"
         },
         {
             "id": "F039",
@@ -603,15 +603,15 @@
                 "Back navigation works correctly in standalone mode"
             ],
             "estimatedEffort": "medium",
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T16:48:00.000Z",
+            "verifiedBy": "agent-session-8"
         }
     ],
     "metadata": {
         "createdAt": "2025-12-05T00:00:00.000Z",
-        "lastUpdated": "2025-12-05T14:00:00.000Z",
+        "lastUpdated": "2025-12-05T16:48:00.000Z",
         "totalFeatures": 39,
-        "passingFeatures": 31
+        "passingFeatures": 39
     }
 }

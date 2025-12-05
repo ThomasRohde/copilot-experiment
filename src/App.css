@@ -28,16 +28,17 @@ body {
 
 /* Standalone mode adjustments (F039) */
 @media (display-mode: standalone) {
+
     /* Additional top padding for standalone mode status bar */
     #root {
         padding-top: max(env(safe-area-inset-top), 0px);
     }
-    
+
     /* Prevent overscroll bounce in standalone */
     html {
         overscroll-behavior: none;
     }
-    
+
     body {
         overscroll-behavior: none;
         /* Disable pull-to-refresh in standalone */

@@ -44,8 +44,8 @@ export function OfflineIndicator() {
                 {isOffline ? '📡' : '✓'}
             </span>
             <span className="offline-indicator__text">
-                {isOffline 
-                    ? 'You\'re offline. Game progress is saved locally.' 
+                {isOffline
+                    ? 'You\'re offline. Game progress is saved locally.'
                     : 'Back online!'}
             </span>
         </div>

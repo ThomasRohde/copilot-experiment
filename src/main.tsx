@@ -22,7 +22,7 @@ if ('serviceWorker' in navigator) {
         navigator.serviceWorker.ready
             .then((registration) => {
                 console.log('[PWA] Service worker registered:', registration.scope);
-                
+
                 // Log when service worker is controlling the page
                 if (navigator.serviceWorker.controller) {
                     console.log('[PWA] Page is controlled by service worker');
@@ -31,7 +31,7 @@ if ('serviceWorker' in navigator) {
             .catch((error: unknown) => {
                 console.error('[PWA] Service worker registration failed:', error);
             });
-        
+
         // Listen for service worker updates
         navigator.serviceWorker.addEventListener('controllerchange', () => {
             console.log('[PWA] Service worker controller changed - new version active');

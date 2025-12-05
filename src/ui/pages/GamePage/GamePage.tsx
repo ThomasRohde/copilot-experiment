@@ -38,8 +38,8 @@ export function GamePage() {
             <header className="game-page__header">
                 {/* Show back button in standalone mode (F039) */}
                 {isStandalone && (
-                    <button 
-                        className="game-page__back-button" 
+                    <button
+                        className="game-page__back-button"
                         onClick={handleBack}
                         aria-label="Back to home"
                     >
