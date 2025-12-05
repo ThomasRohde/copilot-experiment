@@ -54,9 +54,9 @@
                 "Only top card of each tableau pile is face up",
                 "Remaining 24 cards in stock pile"
             ],
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T12:00:00.000Z",
+            "verifiedBy": "playwright-e2e"
         },
         {
             "id": "F005",
@@ -69,9 +69,9 @@
                 "Draw 3 mode draws up to 3 cards",
                 "Empty stock can be reset from waste pile"
             ],
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T12:00:00.000Z",
+            "verifiedBy": "playwright-e2e"
         },
         {
             "id": "F006",
@@ -156,9 +156,9 @@
                 "Counter displayed in UI",
                 "Undo decrements counter"
             ],
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T12:00:00.000Z",
+            "verifiedBy": "playwright-e2e"
         },
         {
             "id": "F012",
@@ -171,9 +171,9 @@
                 "Timer pauses when game is won",
                 "Timer resets on new game"
             ],
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T12:00:00.000Z",
+            "verifiedBy": "playwright-e2e"
         },
         {
             "id": "F013",
@@ -215,9 +215,9 @@
                 "All piles visible without scrolling on desktop",
                 "Mobile-friendly layout on small screens"
             ],
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T12:00:00.000Z",
+            "verifiedBy": "playwright-e2e"
         },
         {
             "id": "F016",
@@ -230,9 +230,9 @@
                 "Invalid drops return card to original position",
                 "Touch support for mobile devices"
             ],
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T12:00:00.000Z",
+            "verifiedBy": "playwright-e2e"
         },
         {
             "id": "F017",
@@ -245,9 +245,9 @@
                 "Double-click auto-moves to foundation if valid",
                 "Visual indicator for selected card"
             ],
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T12:00:00.000Z",
+            "verifiedBy": "playwright-e2e"
         },
         {
             "id": "F018",
@@ -274,9 +274,9 @@
                 "Confirms before abandoning in-progress game",
                 "Starts fresh shuffled game"
             ],
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T12:00:00.000Z",
+            "verifiedBy": "playwright-e2e"
         },
         {
             "id": "F020",
@@ -334,9 +334,9 @@
                 "Route for help (/help)",
                 "Navigation works with browser back/forward"
             ],
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T12:00:00.000Z",
+            "verifiedBy": "playwright-e2e"
         },
         {
             "id": "F024",
@@ -456,8 +456,8 @@
     ],
     "metadata": {
         "createdAt": "2025-12-05T00:00:00.000Z",
-        "lastUpdated": "2025-12-05T10:30:00.000Z",
+        "lastUpdated": "2025-12-05T12:00:00.000Z",
         "totalFeatures": 31,
-        "passingFeatures": 6
+        "passingFeatures": 15
     }
 }
