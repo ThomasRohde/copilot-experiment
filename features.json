@@ -452,12 +452,150 @@
             "passes": true,
             "verifiedAt": "2025-12-05T10:30:00.000Z",
             "verifiedBy": "agent-session-3"
+        },
+        {
+            "id": "F032",
+            "category": "ui",
+            "priority": 2,
+            "description": "PWA install prompt UI component",
+            "dependencies": ["F024"],
+            "acceptanceCriteria": [
+                "Install banner/button appears when app is installable",
+                "User can dismiss the install prompt",
+                "Prompt does not reappear after dismissal for 7 days",
+                "Install button triggers browser's native install dialog",
+                "Banner hides automatically after successful installation"
+            ],
+            "estimatedEffort": "medium",
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F033",
+            "category": "ui",
+            "priority": 2,
+            "description": "Offline status indicator",
+            "dependencies": ["F024"],
+            "acceptanceCriteria": [
+                "Visual indicator shows when app is offline",
+                "Indicator appears/disappears based on network status",
+                "User is informed that game progress is saved locally",
+                "Indicator does not block gameplay"
+            ],
+            "estimatedEffort": "small",
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F034",
+            "category": "ui",
+            "priority": 2,
+            "description": "PWA update available notification",
+            "dependencies": ["F024"],
+            "acceptanceCriteria": [
+                "Notification appears when new version is available",
+                "User can click to refresh and update the app",
+                "User can dismiss and continue with current version",
+                "Update applies after page refresh"
+            ],
+            "estimatedEffort": "medium",
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F035",
+            "category": "infrastructure",
+            "priority": 3,
+            "description": "PWA app shortcuts for quick actions",
+            "dependencies": ["F024"],
+            "acceptanceCriteria": [
+                "App manifest includes shortcuts array",
+                "New Game shortcut launches directly to new game",
+                "Continue Game shortcut resumes last saved game",
+                "Shortcuts appear in OS app context menu (right-click icon)"
+            ],
+            "estimatedEffort": "small",
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F036",
+            "category": "infrastructure",
+            "priority": 3,
+            "description": "Enhanced iOS PWA support",
+            "dependencies": ["F024"],
+            "acceptanceCriteria": [
+                "Apple touch icon configured correctly",
+                "Apple mobile web app capable meta tags present",
+                "Status bar style configured for iOS",
+                "Splash screen images configured for iOS devices",
+                "App name displays correctly on iOS home screen"
+            ],
+            "estimatedEffort": "medium",
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F037",
+            "category": "infrastructure",
+            "priority": 3,
+            "description": "Service worker lifecycle management",
+            "dependencies": ["F024"],
+            "acceptanceCriteria": [
+                "Service worker updates are handled gracefully",
+                "User is not disrupted during SW update",
+                "Stale cache is cleaned up after update",
+                "Console logs SW registration status in development"
+            ],
+            "estimatedEffort": "medium",
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F038",
+            "category": "infrastructure",
+            "priority": 4,
+            "description": "PWA analytics and install tracking",
+            "dependencies": ["F032"],
+            "acceptanceCriteria": [
+                "App tracks when install prompt is shown (console log)",
+                "App tracks when user accepts/dismisses install",
+                "App detects if running in standalone mode",
+                "Display mode is logged for debugging purposes"
+            ],
+            "estimatedEffort": "small",
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F039",
+            "category": "ui",
+            "priority": 4,
+            "description": "PWA standalone mode UI adjustments",
+            "dependencies": ["F024"],
+            "acceptanceCriteria": [
+                "App detects when running in standalone/installed mode",
+                "Navigation adjusts for standalone mode (no browser chrome)",
+                "Safe area insets handled for notched devices",
+                "Back navigation works correctly in standalone mode"
+            ],
+            "estimatedEffort": "medium",
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
         }
     ],
     "metadata": {
         "createdAt": "2025-12-05T00:00:00.000Z",
-        "lastUpdated": "2025-12-05T10:12:00.000Z",
-        "totalFeatures": 31,
+        "lastUpdated": "2025-12-05T14:00:00.000Z",
+        "totalFeatures": 39,
         "passingFeatures": 31
     }
 }
