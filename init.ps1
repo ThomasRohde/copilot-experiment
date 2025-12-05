@@ -10,7 +10,8 @@ Write-Host "=========================================" -ForegroundColor Green
 if (-not (Test-Path "node_modules")) {
     Write-Host "📦 Installing dependencies..." -ForegroundColor Yellow
     npm install
-} else {
+}
+else {
     Write-Host "✓ Dependencies already installed" -ForegroundColor Green
 }
 

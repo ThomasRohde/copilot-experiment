@@ -1,447 +1,463 @@
 {
-  "projectName": "klondike-solitaire",
-  "version": "0.1.0",
-  "features": [
-    {
-      "id": "F001",
-      "category": "infrastructure",
-      "priority": 1,
-      "description": "Vite + React + TypeScript project setup with ESLint/Prettier",
-      "acceptanceCriteria": [
-        "Project builds without errors using `npm run build`",
-        "ESLint and Prettier are configured and pass on all files",
-        "TypeScript strict mode is enabled"
-      ],
-      "passes": true,
-      "verifiedAt": "2025-12-05T09:15:00.000Z",
-      "verifiedBy": "agent-session-2"
-    },
-    {
-      "id": "F002",
-      "category": "core",
-      "priority": 1,
-      "description": "Card and deck data models with strong typing",
-      "acceptanceCriteria": [
-        "Card type includes suit, rank, faceUp state",
-        "All 52 cards can be represented",
-        "Type safety prevents invalid card combinations"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
-    },
-    {
-      "id": "F003",
-      "category": "core",
-      "priority": 1,
-      "description": "Deck shuffling with Fisher-Yates algorithm",
-      "acceptanceCriteria": [
-        "Shuffle produces random order",
-        "All 52 cards present after shuffle",
-        "No duplicate cards after shuffle"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
-    },
-    {
-      "id": "F004",
-      "category": "core",
-      "priority": 1,
-      "description": "Initial game deal layout",
-      "acceptanceCriteria": [
-        "7 tableau piles with correct card counts (1-7)",
-        "Only top card of each tableau pile is face up",
-        "Remaining 24 cards in stock pile"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
-    },
-    {
-      "id": "F005",
-      "category": "core",
-      "priority": 1,
-      "description": "Stock pile draw mechanics (draw 1 or draw 3)",
-      "acceptanceCriteria": [
-        "Click on stock draws cards to waste pile",
-        "Draw 1 mode draws single card",
-        "Draw 3 mode draws up to 3 cards",
-        "Empty stock can be reset from waste pile"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
-    },
-    {
-      "id": "F006",
-      "category": "core",
-      "priority": 1,
-      "description": "Tableau pile move validation",
-      "acceptanceCriteria": [
-        "Cards can only be placed on opposite color",
-        "Cards must be one rank lower than target",
-        "Kings can be placed on empty tableau piles",
-        "Multiple face-up cards can be moved together"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
-    },
-    {
-      "id": "F007",
-      "category": "core",
-      "priority": 1,
-      "description": "Foundation pile move validation",
-      "acceptanceCriteria": [
-        "Only aces can start a foundation pile",
-        "Cards must match suit of foundation",
-        "Cards must be one rank higher than top card",
-        "Only single cards can be moved to foundation"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
-    },
-    {
-      "id": "F008",
-      "category": "core",
-      "priority": 1,
-      "description": "Auto-flip face-down cards",
-      "acceptanceCriteria": [
-        "When top card is moved, next card flips face up",
-        "Flip happens automatically after valid move"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
-    },
-    {
-      "id": "F009",
-      "category": "core",
-      "priority": 1,
-      "description": "Win condition detection",
-      "acceptanceCriteria": [
-        "Win detected when all 4 foundations have 13 cards",
-        "Win dialog/animation shown on victory",
-        "Game statistics updated on win"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
-    },
-    {
-      "id": "F010",
-      "category": "core",
-      "priority": 2,
-      "description": "Undo functionality with move history",
-      "acceptanceCriteria": [
-        "Each move is recorded in history",
-        "Undo button reverses last move",
-        "Multiple undos supported",
-        "Undo restores card face states correctly"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
-    },
-    {
-      "id": "F011",
-      "category": "core",
-      "priority": 2,
-      "description": "Move counter tracking",
-      "acceptanceCriteria": [
-        "Counter starts at 0 for new game",
-        "Counter increments on each valid move",
-        "Counter displayed in UI",
-        "Undo decrements counter"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
-    },
-    {
-      "id": "F012",
-      "category": "core",
-      "priority": 2,
-      "description": "Game timer",
-      "acceptanceCriteria": [
-        "Timer starts on first move",
-        "Timer displays in MM:SS format",
-        "Timer pauses when game is won",
-        "Timer resets on new game"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
-    },
-    {
-      "id": "F013",
-      "category": "ui",
-      "priority": 1,
-      "description": "SVG card assets for all 52 cards",
-      "acceptanceCriteria": [
-        "All 52 card faces available as SVG",
-        "Cards are visually distinct and readable",
-        "Consistent sizing across all cards"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
-    },
-    {
-      "id": "F014",
-      "category": "ui",
-      "priority": 1,
-      "description": "Card back designs (2 variants)",
-      "acceptanceCriteria": [
-        "At least 2 card back designs available",
-        "Card backs stored as SVG",
-        "User can select card back in settings"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
-    },
-    {
-      "id": "F015",
-      "category": "ui",
-      "priority": 1,
-      "description": "Responsive game table layout",
-      "acceptanceCriteria": [
-        "Table has felt-like background",
-        "Layout adapts to different screen sizes",
-        "All piles visible without scrolling on desktop",
-        "Mobile-friendly layout on small screens"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
-    },
-    {
-      "id": "F016",
-      "category": "ui",
-      "priority": 1,
-      "description": "Drag and drop card movement",
-      "acceptanceCriteria": [
-        "Cards can be dragged to valid locations",
-        "Visual feedback during drag",
-        "Invalid drops return card to original position",
-        "Touch support for mobile devices"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
-    },
-    {
-      "id": "F017",
-      "category": "ui",
-      "priority": 2,
-      "description": "Click-to-move alternative",
-      "acceptanceCriteria": [
-        "Click on card to select it",
-        "Click on valid destination to move",
-        "Double-click auto-moves to foundation if valid",
-        "Visual indicator for selected card"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
-    },
-    {
-      "id": "F018",
-      "category": "ui",
-      "priority": 2,
-      "description": "Smooth animations",
-      "acceptanceCriteria": [
-        "Card movements are animated",
-        "Card flip animations present",
-        "Win celebration animation",
-        "Animations don't block gameplay"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
-    },
-    {
-      "id": "F019",
-      "category": "ui",
-      "priority": 1,
-      "description": "New game button",
-      "acceptanceCriteria": [
-        "Button visible in game UI",
-        "Confirms before abandoning in-progress game",
-        "Starts fresh shuffled game"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
-    },
-    {
-      "id": "F020",
-      "category": "ui",
-      "priority": 2,
-      "description": "Settings panel",
-      "acceptanceCriteria": [
-        "Draw mode toggle (1 or 3 cards)",
-        "Sound on/off toggle (placeholder)",
-        "Card back selection",
-        "Settings persist in localStorage"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
-    },
-    {
-      "id": "F021",
-      "category": "infrastructure",
-      "priority": 1,
-      "description": "Zustand store with Immer integration",
-      "acceptanceCriteria": [
-        "Game state managed by Zustand",
-        "Immer enables immutable updates",
-        "Store actions for all game operations",
-        "State shape is well-typed"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
-    },
-    {
-      "id": "F022",
-      "category": "infrastructure",
-      "priority": 2,
-      "description": "LocalStorage persistence",
-      "acceptanceCriteria": [
-        "Current game saved to localStorage",
-        "Game restored on page reload",
-        "Settings persisted separately",
-        "Graceful handling of corrupted data"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
-    },
-    {
-      "id": "F023",
-      "category": "infrastructure",
-      "priority": 1,
-      "description": "React Router navigation",
-      "acceptanceCriteria": [
-        "Route for menu/home (/)",
-        "Route for game (/game)",
-        "Route for help (/help)",
-        "Navigation works with browser back/forward"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
-    },
-    {
-      "id": "F024",
-      "category": "infrastructure",
-      "priority": 2,
-      "description": "PWA configuration with vite-plugin-pwa",
-      "acceptanceCriteria": [
-        "Web app manifest configured",
-        "Service worker registered",
-        "App installable on supported browsers",
-        "Offline support for core views"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
-    },
-    {
-      "id": "F025",
-      "category": "testing",
-      "priority": 1,
-      "description": "Vitest setup and configuration",
-      "acceptanceCriteria": [
-        "Vitest configured in project",
-        "Tests run with `npm test`",
-        "Coverage reporting available"
-      ],
-      "passes": true,
-      "verifiedAt": "2025-12-05T09:15:00.000Z",
-      "verifiedBy": "agent-session-2"
-    },
-    {
-      "id": "F026",
-      "category": "testing",
-      "priority": 1,
-      "description": "Unit tests for shuffle logic",
-      "acceptanceCriteria": [
-        "Test verifies 52 cards after shuffle",
-        "Test verifies no duplicates",
-        "Test verifies randomness (different orders)"
-      ],
-      "passes": true,
-      "verifiedAt": "2025-12-05T09:15:00.000Z",
-      "verifiedBy": "agent-session-2"
-    },
-    {
-      "id": "F027",
-      "category": "testing",
-      "priority": 1,
-      "description": "Unit tests for move validation",
-      "acceptanceCriteria": [
-        "Tests for valid tableau moves",
-        "Tests for invalid tableau moves",
-        "Tests for foundation moves",
-        "Tests for edge cases"
-      ],
-      "passes": true,
-      "verifiedAt": "2025-12-05T09:15:00.000Z",
-      "verifiedBy": "agent-session-2"
-    },
-    {
-      "id": "F028",
-      "category": "testing",
-      "priority": 1,
-      "description": "Unit tests for win condition",
-      "acceptanceCriteria": [
-        "Test detects completed game",
-        "Test confirms incomplete game not won",
-        "Test handles edge cases"
-      ],
-      "passes": true,
-      "verifiedAt": "2025-12-05T09:15:00.000Z",
-      "verifiedBy": "agent-session-2"
-    },
-    {
-      "id": "F029",
-      "category": "ui",
-      "priority": 3,
-      "description": "Help page with game rules",
-      "acceptanceCriteria": [
-        "Rules of Klondike explained",
-        "Controls documented",
-        "Accessible from main menu"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
-    },
-    {
-      "id": "F030",
-      "category": "infrastructure",
-      "priority": 3,
-      "description": "Error boundary and graceful error handling",
-      "acceptanceCriteria": [
-        "React error boundary catches render errors",
-        "User-friendly error message displayed",
-        "Option to start new game on error"
-      ],
-      "passes": false,
-      "verifiedAt": null,
-      "verifiedBy": null
+    "projectName": "klondike-solitaire",
+    "version": "0.1.0",
+    "features": [
+        {
+            "id": "F001",
+            "category": "infrastructure",
+            "priority": 1,
+            "description": "Vite + React + TypeScript project setup with ESLint/Prettier",
+            "acceptanceCriteria": [
+                "Project builds without errors using `npm run build`",
+                "ESLint and Prettier are configured and pass on all files",
+                "TypeScript strict mode is enabled"
+            ],
+            "passes": true,
+            "verifiedAt": "2025-12-05T09:15:00.000Z",
+            "verifiedBy": "agent-session-2"
+        },
+        {
+            "id": "F002",
+            "category": "core",
+            "priority": 1,
+            "description": "Card and deck data models with strong typing",
+            "acceptanceCriteria": [
+                "Card type includes suit, rank, faceUp state",
+                "All 52 cards can be represented",
+                "Type safety prevents invalid card combinations"
+            ],
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F003",
+            "category": "core",
+            "priority": 1,
+            "description": "Deck shuffling with Fisher-Yates algorithm",
+            "acceptanceCriteria": [
+                "Shuffle produces random order",
+                "All 52 cards present after shuffle",
+                "No duplicate cards after shuffle"
+            ],
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F004",
+            "category": "core",
+            "priority": 1,
+            "description": "Initial game deal layout",
+            "acceptanceCriteria": [
+                "7 tableau piles with correct card counts (1-7)",
+                "Only top card of each tableau pile is face up",
+                "Remaining 24 cards in stock pile"
+            ],
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F005",
+            "category": "core",
+            "priority": 1,
+            "description": "Stock pile draw mechanics (draw 1 or draw 3)",
+            "acceptanceCriteria": [
+                "Click on stock draws cards to waste pile",
+                "Draw 1 mode draws single card",
+                "Draw 3 mode draws up to 3 cards",
+                "Empty stock can be reset from waste pile"
+            ],
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F006",
+            "category": "core",
+            "priority": 1,
+            "description": "Tableau pile move validation",
+            "acceptanceCriteria": [
+                "Cards can only be placed on opposite color",
+                "Cards must be one rank lower than target",
+                "Kings can be placed on empty tableau piles",
+                "Multiple face-up cards can be moved together"
+            ],
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F007",
+            "category": "core",
+            "priority": 1,
+            "description": "Foundation pile move validation",
+            "acceptanceCriteria": [
+                "Only aces can start a foundation pile",
+                "Cards must match suit of foundation",
+                "Cards must be one rank higher than top card",
+                "Only single cards can be moved to foundation"
+            ],
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F008",
+            "category": "core",
+            "priority": 1,
+            "description": "Auto-flip face-down cards",
+            "acceptanceCriteria": [
+                "When top card is moved, next card flips face up",
+                "Flip happens automatically after valid move"
+            ],
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F009",
+            "category": "core",
+            "priority": 1,
+            "description": "Win condition detection",
+            "acceptanceCriteria": [
+                "Win detected when all 4 foundations have 13 cards",
+                "Win dialog/animation shown on victory",
+                "Game statistics updated on win"
+            ],
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F010",
+            "category": "core",
+            "priority": 2,
+            "description": "Undo functionality with move history",
+            "acceptanceCriteria": [
+                "Each move is recorded in history",
+                "Undo button reverses last move",
+                "Multiple undos supported",
+                "Undo restores card face states correctly"
+            ],
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F011",
+            "category": "core",
+            "priority": 2,
+            "description": "Move counter tracking",
+            "acceptanceCriteria": [
+                "Counter starts at 0 for new game",
+                "Counter increments on each valid move",
+                "Counter displayed in UI",
+                "Undo decrements counter"
+            ],
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F012",
+            "category": "core",
+            "priority": 2,
+            "description": "Game timer",
+            "acceptanceCriteria": [
+                "Timer starts on first move",
+                "Timer displays in MM:SS format",
+                "Timer pauses when game is won",
+                "Timer resets on new game"
+            ],
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F013",
+            "category": "ui",
+            "priority": 1,
+            "description": "Professional SVG card assets from Vector-Playing-Cards (public domain)",
+            "acceptanceCriteria": [
+                "All 52 card faces available as professional SVG from Vector-Playing-Cards repo",
+                "Cards are high-quality traditional playing card designs with face cards",
+                "Consistent sizing across all cards",
+                "License file included documenting public domain / WTFPL license"
+            ],
+            "passes": true,
+            "verifiedAt": "2025-12-05T10:30:00.000Z",
+            "verifiedBy": "agent-session-3"
+        },
+        {
+            "id": "F014",
+            "category": "ui",
+            "priority": 1,
+            "description": "Card back designs (2 variants)",
+            "acceptanceCriteria": [
+                "At least 2 card back designs available",
+                "Card backs stored as SVG",
+                "User can select card back in settings"
+            ],
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F015",
+            "category": "ui",
+            "priority": 1,
+            "description": "Responsive game table layout",
+            "acceptanceCriteria": [
+                "Table has felt-like background",
+                "Layout adapts to different screen sizes",
+                "All piles visible without scrolling on desktop",
+                "Mobile-friendly layout on small screens"
+            ],
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F016",
+            "category": "ui",
+            "priority": 1,
+            "description": "Drag and drop card movement",
+            "acceptanceCriteria": [
+                "Cards can be dragged to valid locations",
+                "Visual feedback during drag",
+                "Invalid drops return card to original position",
+                "Touch support for mobile devices"
+            ],
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F017",
+            "category": "ui",
+            "priority": 2,
+            "description": "Click-to-move alternative",
+            "acceptanceCriteria": [
+                "Click on card to select it",
+                "Click on valid destination to move",
+                "Double-click auto-moves to foundation if valid",
+                "Visual indicator for selected card"
+            ],
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F018",
+            "category": "ui",
+            "priority": 2,
+            "description": "Smooth animations",
+            "acceptanceCriteria": [
+                "Card movements are animated",
+                "Card flip animations present",
+                "Win celebration animation",
+                "Animations don't block gameplay"
+            ],
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F019",
+            "category": "ui",
+            "priority": 1,
+            "description": "New game button",
+            "acceptanceCriteria": [
+                "Button visible in game UI",
+                "Confirms before abandoning in-progress game",
+                "Starts fresh shuffled game"
+            ],
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F020",
+            "category": "ui",
+            "priority": 2,
+            "description": "Settings panel",
+            "acceptanceCriteria": [
+                "Draw mode toggle (1 or 3 cards)",
+                "Sound on/off toggle (placeholder)",
+                "Card back selection",
+                "Settings persist in localStorage"
+            ],
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F021",
+            "category": "infrastructure",
+            "priority": 1,
+            "description": "Zustand store with Immer integration",
+            "acceptanceCriteria": [
+                "Game state managed by Zustand",
+                "Immer enables immutable updates",
+                "Store actions for all game operations",
+                "State shape is well-typed"
+            ],
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F022",
+            "category": "infrastructure",
+            "priority": 2,
+            "description": "LocalStorage persistence",
+            "acceptanceCriteria": [
+                "Current game saved to localStorage",
+                "Game restored on page reload",
+                "Settings persisted separately",
+                "Graceful handling of corrupted data"
+            ],
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F023",
+            "category": "infrastructure",
+            "priority": 1,
+            "description": "React Router navigation",
+            "acceptanceCriteria": [
+                "Route for menu/home (/)",
+                "Route for game (/game)",
+                "Route for help (/help)",
+                "Navigation works with browser back/forward"
+            ],
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F024",
+            "category": "infrastructure",
+            "priority": 2,
+            "description": "PWA configuration with vite-plugin-pwa",
+            "acceptanceCriteria": [
+                "Web app manifest configured",
+                "Service worker registered",
+                "App installable on supported browsers",
+                "Offline support for core views"
+            ],
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F025",
+            "category": "testing",
+            "priority": 1,
+            "description": "Vitest setup and configuration",
+            "acceptanceCriteria": [
+                "Vitest configured in project",
+                "Tests run with `npm test`",
+                "Coverage reporting available"
+            ],
+            "passes": true,
+            "verifiedAt": "2025-12-05T09:15:00.000Z",
+            "verifiedBy": "agent-session-2"
+        },
+        {
+            "id": "F026",
+            "category": "testing",
+            "priority": 1,
+            "description": "Unit tests for shuffle logic",
+            "acceptanceCriteria": [
+                "Test verifies 52 cards after shuffle",
+                "Test verifies no duplicates",
+                "Test verifies randomness (different orders)"
+            ],
+            "passes": true,
+            "verifiedAt": "2025-12-05T09:15:00.000Z",
+            "verifiedBy": "agent-session-2"
+        },
+        {
+            "id": "F027",
+            "category": "testing",
+            "priority": 1,
+            "description": "Unit tests for move validation",
+            "acceptanceCriteria": [
+                "Tests for valid tableau moves",
+                "Tests for invalid tableau moves",
+                "Tests for foundation moves",
+                "Tests for edge cases"
+            ],
+            "passes": true,
+            "verifiedAt": "2025-12-05T09:15:00.000Z",
+            "verifiedBy": "agent-session-2"
+        },
+        {
+            "id": "F028",
+            "category": "testing",
+            "priority": 1,
+            "description": "Unit tests for win condition",
+            "acceptanceCriteria": [
+                "Test detects completed game",
+                "Test confirms incomplete game not won",
+                "Test handles edge cases"
+            ],
+            "passes": true,
+            "verifiedAt": "2025-12-05T09:15:00.000Z",
+            "verifiedBy": "agent-session-2"
+        },
+        {
+            "id": "F029",
+            "category": "ui",
+            "priority": 3,
+            "description": "Help page with game rules",
+            "acceptanceCriteria": [
+                "Rules of Klondike explained",
+                "Controls documented",
+                "Accessible from main menu"
+            ],
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F030",
+            "category": "infrastructure",
+            "priority": 3,
+            "description": "Error boundary and graceful error handling",
+            "acceptanceCriteria": [
+                "React error boundary catches render errors",
+                "User-friendly error message displayed",
+                "Option to start new game on error"
+            ],
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F031",
+            "category": "infrastructure",
+            "priority": 2,
+            "description": "Professional card asset download script with build-time automation",
+            "acceptanceCriteria": [
+                "Script downloads all 52 card SVGs from Vector-Playing-Cards repo",
+                "Existing cards are backed up before replacement",
+                "Script can be run via `npx tsx scripts/download-pro-cards.ts`",
+                "Downloaded assets match project naming convention"
+            ],
+            "passes": true,
+            "verifiedAt": "2025-12-05T10:30:00.000Z",
+            "verifiedBy": "agent-session-3"
+        }
+    ],
+    "metadata": {
+        "createdAt": "2025-12-05T00:00:00.000Z",
+        "lastUpdated": "2025-12-05T10:30:00.000Z",
+        "totalFeatures": 31,
+        "passingFeatures": 6
     }
-  ],
-  "metadata": {
-    "createdAt": "2025-12-05T00:00:00.000Z",
-    "lastUpdated": "2025-12-05T09:15:00.000Z",
-    "totalFeatures": 30,
-    "passingFeatures": 5
-  }
 }
