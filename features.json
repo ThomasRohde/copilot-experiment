@@ -606,12 +606,130 @@
             "passes": true,
             "verifiedAt": "2025-12-05T16:48:00.000Z",
             "verifiedBy": "agent-session-8"
+        },
+        {
+            "id": "F040",
+            "category": "infrastructure",
+            "priority": 1,
+            "description": "GitHub Pages deployment configuration with correct base URL",
+            "dependencies": [
+                "F001"
+            ],
+            "acceptanceCriteria": [
+                "Vite config includes base path '/klondike/' for GitHub Pages project site",
+                "All asset paths resolve correctly with base path prefix",
+                "PWA manifest start_url and scope configured for /klondike/ path",
+                "Production build works locally with 'npm run preview'"
+            ],
+            "estimatedEffort": "small",
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F041",
+            "category": "infrastructure",
+            "priority": 1,
+            "description": "GitHub Actions workflow for automated deployment",
+            "dependencies": [
+                "F040"
+            ],
+            "acceptanceCriteria": [
+                "Workflow file exists at .github/workflows/deploy.yml",
+                "Workflow triggers on push to main branch",
+                "Workflow runs npm install, build, and deploys to gh-pages",
+                "Uses GitHub Pages action for deployment",
+                "Build artifacts include all PWA assets"
+            ],
+            "estimatedEffort": "medium",
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F042",
+            "category": "infrastructure",
+            "priority": 2,
+            "description": "SPA routing support for GitHub Pages (404.html redirect)",
+            "dependencies": [
+                "F040",
+                "F023"
+            ],
+            "acceptanceCriteria": [
+                "404.html file redirects to index.html with path preserved",
+                "index.html handles the redirect and restores correct route",
+                "Direct navigation to /klondike/game works correctly",
+                "Browser back/forward navigation works after redirect"
+            ],
+            "estimatedEffort": "small",
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F043",
+            "category": "infrastructure",
+            "priority": 2,
+            "description": "Router configuration for GitHub Pages base path",
+            "dependencies": [
+                "F023",
+                "F040"
+            ],
+            "acceptanceCriteria": [
+                "React Router basename configured to '/klondike'",
+                "All internal links work correctly with base path",
+                "Navigation between home, game, and help pages works",
+                "URL shows correct path (e.g., /klondike/game not just /game)"
+            ],
+            "estimatedEffort": "small",
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F044",
+            "category": "testing",
+            "priority": 3,
+            "description": "Production deployment verification tests",
+            "dependencies": [
+                "F040",
+                "F041"
+            ],
+            "acceptanceCriteria": [
+                "Smoke test verifies https://thomasrohde.github.io/klondike/ loads",
+                "Test confirms game page is accessible at /klondike/game",
+                "Test verifies PWA manifest is served correctly",
+                "Test confirms all card assets load from correct paths"
+            ],
+            "estimatedEffort": "medium",
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
+        },
+        {
+            "id": "F045",
+            "category": "docs",
+            "priority": 3,
+            "description": "Deployment documentation in README",
+            "dependencies": [
+                "F041"
+            ],
+            "acceptanceCriteria": [
+                "README includes deployment section with GitHub Pages URL",
+                "Instructions for manual deployment if needed",
+                "Notes about automatic deployment on push to main",
+                "Link to live demo in README header"
+            ],
+            "estimatedEffort": "small",
+            "passes": false,
+            "verifiedAt": null,
+            "verifiedBy": null
         }
     ],
     "metadata": {
         "createdAt": "2025-12-05T00:00:00.000Z",
-        "lastUpdated": "2025-12-05T16:48:00.000Z",
-        "totalFeatures": 39,
+        "lastUpdated": "2025-12-05T18:00:00.000Z",
+        "totalFeatures": 45,
         "passingFeatures": 39
     }
 }
