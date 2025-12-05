@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Card as CardType, getCardImagePath, getCardBackPath } from '@/game/types';
 import { useGameStore, useSettings, useSelectedCardIds } from '@/state/gameStore';
 import './Card.css';
@@ -25,10 +25,24 @@ export function Card({
     const selectCard = useGameStore((state) => state.selectCard);
     const autoMoveToFoundation = useGameStore((state) => state.autoMoveToFoundation);
 
+    // Track flip animation state
+    const [isFlipping, setIsFlipping] = useState(false);
+    const prevFaceUpRef = useRef(card.faceUp);
+
+    useEffect(() => {
+        // Detect when card flips from face-down to face-up
+        if (card.faceUp && !prevFaceUpRef.current) {
+            setIsFlipping(true);
+            const timer = setTimeout(() => {
+                setIsFlipping(false);
+            }, 400); // Match animation duration
+            prevFaceUpRef.current = card.faceUp;
+            return () => { clearTimeout(timer); };
+        }
+        prevFaceUpRef.current = card.faceUp;
+    }, [card.faceUp]);
+
     const isSelected = selectedCardIds.includes(card.id);
-    const imagePath = card.faceUp
-        ? getCardImagePath(card)
-        : getCardBackPath(settings.cardBack);
 
     const handleClick = (e: React.MouseEvent) => {
         e.stopPropagation();
@@ -56,7 +70,7 @@ export function Card({
 
     return (
         <div
-            className={`card ${isSelected ? 'card--selected' : ''} ${isDragging ? 'card--dragging' : ''} ${!card.faceUp ? 'card--face-down' : ''}`}
+            className={`card ${isSelected ? 'card--selected' : ''} ${isDragging ? 'card--dragging' : ''} ${!card.faceUp ? 'card--face-down' : ''} ${isFlipping ? 'card--flipping' : ''}`}
             style={{ '--stack-offset': stackOffset } as React.CSSProperties}
             draggable={card.faceUp}
             onClick={handleClick}
@@ -67,11 +81,22 @@ export function Card({
             data-face-up={card.faceUp}
             data-selected={isSelected}
         >
-            <img
-                src={imagePath}
-                alt={card.faceUp ? `${card.rank} of ${card.suit}` : 'Card back'}
-                draggable={false}
-            />
+            <div className="card__inner">
+                <div className="card__front">
+                    <img
+                        src={getCardImagePath(card)}
+                        alt={`${card.rank} of ${card.suit}`}
+                        draggable={false}
+                    />
+                </div>
+                <div className="card__back">
+                    <img
+                        src={getCardBackPath(settings.cardBack)}
+                        alt="Card back"
+                        draggable={false}
+                    />
+                </div>
+            </div>
         </div>
     );
 }
