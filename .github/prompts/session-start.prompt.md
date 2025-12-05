@@ -89,14 +89,18 @@ Based on your review:
 2. If there are incomplete in-progress features → Complete them
 3. Otherwise → Pick highest priority feature from `features.json`
 
-### 6. Announce Your Plan
+### 6. Announce Your Plan and Begin
 
 Before making changes, state:
 - Which feature you'll work on (by ID and description)
 - Your approach in 2-3 sentences
 - Any risks or dependencies you've identified
 
+**Then immediately begin implementation.** Do not wait for user confirmation—the purpose of this prompt is to get up to speed AND start working.
+
 ## Output Format
+
+After completing the startup routine, provide a brief status report and **begin coding immediately**:
 
 ```markdown
 ## Session Start Report
@@ -105,11 +109,11 @@ Before making changes, state:
 **Working Directory**: <path>
 
 ### Environment Status
-- [ ] Progress file read
-- [ ] Features file read  
-- [ ] Git history reviewed
-- [ ] Init script executed
-- [ ] Smoke test passed
+- [x] Progress file read
+- [x] Features file read  
+- [x] Git history reviewed
+- [x] Init script executed
+- [x] Smoke test passed
 
 ### Project Status
 - **Total Features**: X
@@ -124,3 +128,7 @@ Before making changes, state:
 ### Risks/Dependencies
 - <any concerns>
 ```
+
+## After the Report
+
+**Immediately proceed to implement the selected feature.** Do not ask "Ready to proceed?" or wait for confirmation. The user invoked this prompt to start a productive coding session, so begin working right away.
