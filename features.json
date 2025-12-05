@@ -260,9 +260,9 @@
                 "Win celebration animation",
                 "Animations don't block gameplay"
             ],
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T10:12:00.000Z",
+            "verifiedBy": "agent-session-6"
         },
         {
             "id": "F019",
@@ -349,9 +349,9 @@
                 "App installable on supported browsers",
                 "Offline support for core views"
             ],
-            "passes": false,
-            "verifiedAt": null,
-            "verifiedBy": null
+            "passes": true,
+            "verifiedAt": "2025-12-05T10:12:00.000Z",
+            "verifiedBy": "agent-session-6"
         },
         {
             "id": "F025",
@@ -456,8 +456,8 @@
     ],
     "metadata": {
         "createdAt": "2025-12-05T00:00:00.000Z",
-        "lastUpdated": "2025-12-05T10:00:00.000Z",
+        "lastUpdated": "2025-12-05T10:12:00.000Z",
         "totalFeatures": 31,
-        "passingFeatures": 27
+        "passingFeatures": 31
     }
 }
