@@ -111,9 +111,11 @@ export function getCardId(suit: Suit, rank: Rank): string {
 
 // Get card image path
 export function getCardImagePath(card: Card): string {
-    return `/cards/${card.rank.toLowerCase()}_of_${card.suit}.svg`;
+    const base = import.meta.env.BASE_URL || '/';
+    return `${base}cards/${card.rank.toLowerCase()}_of_${card.suit}.svg`;
 }
 
 export function getCardBackPath(back: 'classic' | 'modern'): string {
-    return `/cards/back_${back}.svg`;
+    const base = import.meta.env.BASE_URL || '/';
+    return `${base}cards/back_${back}.svg`;
 }
