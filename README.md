@@ -178,7 +178,8 @@ This creates:
 
 | Command | What It Does |
 |---------|--------------|
-| `/init-project` | Set up framework infrastructure for a new project |
+| `/init-project` | Set up framework infrastructure (scaffold only, no implementation) |
+| `/init-and-build` | Scaffold AND start implementing features in one session |
 | `/session-start` | Begin a session: read context, check status, plan work |
 | `/session-end` | End cleanly: commit, document, handoff to next session |
 | `/verify-feature F001` | Verify a specific feature works end-to-end |

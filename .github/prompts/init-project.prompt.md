@@ -190,3 +190,16 @@ Provide:
 2. **Feature count** breakdown by category
 3. **Next steps** for the first coding agent session
 4. **Commands** to verify setup
+
+## IMPORTANT: Scope Boundary
+
+**STOP after completing the above steps.** This prompt is for scaffolding only.
+
+- ✅ Create `features.json`, `agent-progress.md`, init scripts, git commit
+- ✅ Set up basic project structure (package.json, tsconfig, etc.)
+- ❌ Do NOT start implementing features from `features.json`
+- ❌ Do NOT write application code beyond minimal boilerplate
+
+The user should run `/session-start` to begin implementing features in a separate session.
+
+> **Want to scaffold AND build in one go?** Use `/init-and-build` instead.
