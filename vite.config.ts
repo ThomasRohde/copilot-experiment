@@ -37,6 +37,22 @@ export default defineConfig({
                         purpose: 'any maskable',
                     },
                 ],
+                shortcuts: [
+                    {
+                        name: 'New Game',
+                        short_name: 'New',
+                        description: 'Start a new game of Klondike Solitaire',
+                        url: '/game?action=new',
+                        icons: [{ src: 'pwa-192x192.svg', sizes: '192x192' }],
+                    },
+                    {
+                        name: 'Continue Game',
+                        short_name: 'Continue',
+                        description: 'Resume your last saved game',
+                        url: '/game',
+                        icons: [{ src: 'pwa-192x192.svg', sizes: '192x192' }],
+                    },
+                ],
             },
             workbox: {
                 globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],

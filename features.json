@@ -458,7 +458,9 @@
             "category": "ui",
             "priority": 2,
             "description": "PWA install prompt UI component",
-            "dependencies": ["F024"],
+            "dependencies": [
+                "F024"
+            ],
             "acceptanceCriteria": [
                 "Install banner/button appears when app is installable",
                 "User can dismiss the install prompt",
@@ -476,7 +478,9 @@
             "category": "ui",
             "priority": 2,
             "description": "Offline status indicator",
-            "dependencies": ["F024"],
+            "dependencies": [
+                "F024"
+            ],
             "acceptanceCriteria": [
                 "Visual indicator shows when app is offline",
                 "Indicator appears/disappears based on network status",
@@ -493,7 +497,9 @@
             "category": "ui",
             "priority": 2,
             "description": "PWA update available notification",
-            "dependencies": ["F024"],
+            "dependencies": [
+                "F024"
+            ],
             "acceptanceCriteria": [
                 "Notification appears when new version is available",
                 "User can click to refresh and update the app",
@@ -510,7 +516,9 @@
             "category": "infrastructure",
             "priority": 3,
             "description": "PWA app shortcuts for quick actions",
-            "dependencies": ["F024"],
+            "dependencies": [
+                "F024"
+            ],
             "acceptanceCriteria": [
                 "App manifest includes shortcuts array",
                 "New Game shortcut launches directly to new game",
@@ -527,7 +535,9 @@
             "category": "infrastructure",
             "priority": 3,
             "description": "Enhanced iOS PWA support",
-            "dependencies": ["F024"],
+            "dependencies": [
+                "F024"
+            ],
             "acceptanceCriteria": [
                 "Apple touch icon configured correctly",
                 "Apple mobile web app capable meta tags present",
@@ -545,7 +555,9 @@
             "category": "infrastructure",
             "priority": 3,
             "description": "Service worker lifecycle management",
-            "dependencies": ["F024"],
+            "dependencies": [
+                "F024"
+            ],
             "acceptanceCriteria": [
                 "Service worker updates are handled gracefully",
                 "User is not disrupted during SW update",
@@ -562,7 +574,9 @@
             "category": "infrastructure",
             "priority": 4,
             "description": "PWA analytics and install tracking",
-            "dependencies": ["F032"],
+            "dependencies": [
+                "F032"
+            ],
             "acceptanceCriteria": [
                 "App tracks when install prompt is shown (console log)",
                 "App tracks when user accepts/dismisses install",
@@ -579,7 +593,9 @@
             "category": "ui",
             "priority": 4,
             "description": "PWA standalone mode UI adjustments",
-            "dependencies": ["F024"],
+            "dependencies": [
+                "F024"
+            ],
             "acceptanceCriteria": [
                 "App detects when running in standalone/installed mode",
                 "Navigation adjusts for standalone mode (no browser chrome)",

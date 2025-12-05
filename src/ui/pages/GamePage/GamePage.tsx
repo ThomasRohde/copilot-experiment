@@ -1,12 +1,25 @@
+import { useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { useGameStore } from '@/state/gameStore';
 import { Pile, StockPile, GameStats, GameControls, SettingsPanel, WinModal } from '@/ui/components';
 import './GamePage.css';
 
 export function GamePage() {
+    const [searchParams, setSearchParams] = useSearchParams();
+    const newGame = useGameStore((state) => state.newGame);
     const waste = useGameStore((state) => state.waste);
     const foundations = useGameStore((state) => state.foundations);
     const tableau = useGameStore((state) => state.tableau);
     const clearSelection = useGameStore((state) => state.clearSelection);
+
+    // Handle PWA shortcut: ?action=new starts a new game
+    useEffect(() => {
+        if (searchParams.get('action') === 'new') {
+            newGame();
+            // Remove the query param after handling
+            setSearchParams({}, { replace: true });
+        }
+    }, [searchParams, setSearchParams, newGame]);
 
     const handleTableClick = () => {
         clearSelection();
