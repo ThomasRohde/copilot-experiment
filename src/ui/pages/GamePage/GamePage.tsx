@@ -24,7 +24,9 @@ export function GamePage() {
                 <div className="game-page__top-row">
                     <div className="game-page__stock-area">
                         <StockPile />
-                        <Pile pile={waste} maxVisible={3} />
+                        <div data-testid="waste-pile">
+                            <Pile pile={waste} maxVisible={3} />
+                        </div>
                     </div>
 
                     <div className="game-page__foundations">

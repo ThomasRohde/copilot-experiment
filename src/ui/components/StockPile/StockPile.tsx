@@ -20,7 +20,7 @@ export function StockPile() {
     const cardBackPath = getCardBackPath(settings.cardBack);
 
     return (
-        <div className="stock-pile" onClick={handleClick}>
+        <div className="stock-pile" onClick={handleClick} data-testid="stock-pile">
             {isEmpty ? (
                 <div className="stock-pile__reset">
                     <span className="stock-pile__reset-icon">↻</span>
@@ -32,7 +32,7 @@ export function StockPile() {
                         alt={`${stock.cards.length} cards in stock`}
                         className="stock-pile__card"
                     />
-                    <span className="stock-pile__count">{stock.cards.length}</span>
+                    <span className="stock-pile__count" data-testid="stock-count">{stock.cards.length}</span>
                 </div>
             )}
         </div>

@@ -78,6 +78,7 @@ export function Pile({ pile, spread = false, maxVisible }: PileProps) {
             onDragLeave={handleDragLeave}
             onDrop={handleDrop}
             onClick={handleClick}
+            data-testid={`${pile.type}-pile-${pile.id.split('-').pop()}`}
         >
             {isEmpty && <div className="pile__placeholder" />}
             {cards.map((card, index) => (

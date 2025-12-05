@@ -26,11 +26,11 @@ export function GameStats() {
         <div className="game-stats">
             <div className="game-stats__item">
                 <span className="game-stats__label">Moves</span>
-                <span className="game-stats__value">{moveCount}</span>
+                <span className="game-stats__value" data-testid="move-counter">{moveCount}</span>
             </div>
             <div className="game-stats__item">
                 <span className="game-stats__label">Time</span>
-                <span className="game-stats__value">{formatTime(elapsedTime)}</span>
+                <span className="game-stats__value" data-testid="timer">{formatTime(elapsedTime)}</span>
             </div>
             {isWon && (
                 <div className="game-stats__item game-stats__item--won">

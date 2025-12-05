@@ -63,6 +63,9 @@ export function Card({
             onDoubleClick={handleDoubleClick}
             onDragStart={handleDragStart}
             onDragEnd={onDragEnd}
+            data-testid={`card-${card.id}`}
+            data-face-up={card.faceUp}
+            data-selected={isSelected}
         >
             <img
                 src={imagePath}

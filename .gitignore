@@ -33,6 +33,11 @@ build/
 out/
 *.log
 
+# Playwright
+test-results/
+playwright-report/
+playwright/.cache/
+
 # Dev server PIDs (created by init scripts)
 .dev-server.pid
 

@@ -31,6 +31,7 @@ export function GameControls() {
                 className="game-controls__button"
                 onClick={handleNewGame}
                 title="Start a new game"
+                data-testid="new-game-button"
             >
                 <span className="game-controls__icon">🃏</span>
                 <span className="game-controls__label">New Game</span>
@@ -52,7 +53,7 @@ export function GameControls() {
                         <h3>Start New Game?</h3>
                         <p>Your current progress will be lost.</p>
                         <div className="game-controls__modal-buttons">
-                            <button onClick={confirmNewGame} className="game-controls__confirm">
+                            <button onClick={confirmNewGame} className="game-controls__confirm" data-testid="confirm-new-game">
                                 Yes, Start New
                             </button>
                             <button onClick={cancelNewGame} className="game-controls__cancel">
