@@ -34,7 +34,7 @@ const RANK_DISPLAY: Record<Rank, string> = {
 
 function generatePips(rank: Rank, symbol: string, color: string): string {
   const pip = (x: number, y: number, flip = false) => 
-    `<text x="${x}" y="${y}" font-size="16" fill="${color}" text-anchor="middle" ${flip ? 'transform="rotate(180,' + x + ',' + y + ')"' : ''}>${symbol}</text>`;
+    `<text x="${x}" y="${y}" font-size="16" fill="${color}" text-anchor="middle" ${flip ? `transform="rotate(180,${String(x)},${String(y)})"` : ''}>${symbol}</text>`;
   
   const layouts: Record<Rank, [number, number, boolean?][]> = {
     'a': [[40, 60]],

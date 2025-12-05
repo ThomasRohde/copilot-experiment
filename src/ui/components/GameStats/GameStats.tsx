@@ -19,7 +19,7 @@ export function GameStats() {
       tick();
     }, 1000);
 
-    return () => clearInterval(interval);
+    return () => { clearInterval(interval); };
   }, [tick]);
 
   return (

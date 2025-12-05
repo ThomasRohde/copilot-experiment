@@ -25,7 +25,7 @@ export function SettingsPanel() {
     <div className="settings-panel">
       <button
         className="settings-panel__toggle"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => { setIsOpen(!isOpen); }}
         title="Settings"
       >
         ⚙️
@@ -33,7 +33,7 @@ export function SettingsPanel() {
 
       {isOpen && (
         <>
-          <div className="settings-panel__overlay" onClick={() => setIsOpen(false)} />
+          <div className="settings-panel__overlay" onClick={() => { setIsOpen(false); }} />
           <div className="settings-panel__dropdown">
             <h3>Settings</h3>
             
@@ -42,13 +42,13 @@ export function SettingsPanel() {
               <div className="settings-panel__options">
                 <button
                   className={`settings-panel__option ${settings.drawCount === 1 ? 'settings-panel__option--active' : ''}`}
-                  onClick={() => handleDrawCountChange(1)}
+                  onClick={() => { handleDrawCountChange(1); }}
                 >
                   Draw 1
                 </button>
                 <button
                   className={`settings-panel__option ${settings.drawCount === 3 ? 'settings-panel__option--active' : ''}`}
-                  onClick={() => handleDrawCountChange(3)}
+                  onClick={() => { handleDrawCountChange(3); }}
                 >
                   Draw 3
                 </button>
@@ -71,13 +71,13 @@ export function SettingsPanel() {
               <div className="settings-panel__options">
                 <button
                   className={`settings-panel__option ${settings.cardBack === 'classic' ? 'settings-panel__option--active' : ''}`}
-                  onClick={() => handleCardBackChange('classic')}
+                  onClick={() => { handleCardBackChange('classic'); }}
                 >
                   Classic
                 </button>
                 <button
                   className={`settings-panel__option ${settings.cardBack === 'modern' ? 'settings-panel__option--active' : ''}`}
-                  onClick={() => handleCardBackChange('modern')}
+                  onClick={() => { handleCardBackChange('modern'); }}
                 >
                   Modern
                 </button>
@@ -85,10 +85,10 @@ export function SettingsPanel() {
             </div>
 
             <div className="settings-panel__links">
-              <Link to="/help" className="settings-panel__link" onClick={() => setIsOpen(false)}>
+              <Link to="/help" className="settings-panel__link" onClick={() => { setIsOpen(false); }}>
                 📖 How to Play
               </Link>
-              <Link to="/" className="settings-panel__link" onClick={() => setIsOpen(false)}>
+              <Link to="/" className="settings-panel__link" onClick={() => { setIsOpen(false); }}>
                 🏠 Main Menu
               </Link>
             </div>

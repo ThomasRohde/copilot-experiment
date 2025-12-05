@@ -48,7 +48,7 @@ export function GameControls() {
 
       {showNewGameConfirm && (
         <div className="game-controls__modal-overlay" onClick={cancelNewGame}>
-          <div className="game-controls__modal" onClick={(e) => e.stopPropagation()}>
+          <div className="game-controls__modal" onClick={(e) => { e.stopPropagation(); }}>
             <h3>Start New Game?</h3>
             <p>Your current progress will be lost.</p>
             <div className="game-controls__modal-buttons">
