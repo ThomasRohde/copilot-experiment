@@ -13,7 +13,7 @@
 
 .pile--spread .card {
     position: absolute;
-    top: 0;
+    top: calc(var(--stack-offset, 0) * 1px);
     left: 0;
 }
 

@@ -71,6 +71,22 @@ export function Pile({ pile, spread = false, maxVisible }: PileProps) {
 
     const isEmpty = cards.length === 0;
 
+    // Calculate cumulative offsets for each card
+    // Each card's position is the sum of all previous cards' offsets
+    const cardOffsets = spread
+        ? cards.reduce<number[]>((offsets, card, index) => {
+            if (index === 0) {
+                offsets.push(0);
+            } else {
+                // Add previous card's offset contribution to cumulative total
+                const prevCard = cards[index - 1];
+                const prevOffset = offsets[index - 1];
+                offsets.push(prevOffset + (prevCard.faceUp ? 25 : 10));
+            }
+            return offsets;
+        }, [])
+        : [];
+
     return (
         <div
             className={`pile pile--${pile.type} ${spread ? 'pile--spread' : ''} ${isDragOver ? 'pile--drag-over' : ''} ${isEmpty ? 'pile--empty' : ''}`}
@@ -86,7 +102,7 @@ export function Pile({ pile, spread = false, maxVisible }: PileProps) {
                     key={card.id}
                     card={card}
                     pileId={pile.id}
-                    stackOffset={spread ? (card.faceUp ? 25 : 10) * index : 0}
+                    stackOffset={spread ? cardOffsets[index] : 0}
                 />
             ))}
         </div>
