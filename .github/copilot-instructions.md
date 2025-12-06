@@ -60,6 +60,9 @@ This repository uses a **multi-context-window agent workflow** designed to maint
 - ❌ Leaving code in broken/half-implemented state
 - ❌ Making changes without committing and documenting
 - ❌ Marking features as passing without end-to-end verification
+- ❌ **Committing without running `npm run build` first**
+- ❌ **Committing without running `npm run test` first**
+- ❌ **Leaving the repository with failing builds or tests**
 
 ## Testing Standards
 
@@ -76,6 +79,35 @@ This repository uses a **multi-context-window agent workflow** designed to maint
 - Tag stable checkpoints
 - Use `git revert` to recover from bad changes
 - Never force push without documenting why
+
+## Pre-Commit Verification (MANDATORY)
+
+**BEFORE EVERY `git commit`, you MUST run these checks in order:**
+
+1. **TypeScript/Build Check**: `npm run build` (or equivalent)
+   - If this fails, DO NOT commit
+   - Fix all errors first, then re-run the check
+
+2. **Unit Tests**: `npm run test` (or equivalent)
+   - If tests fail, DO NOT commit
+   - Fix failing tests before committing
+
+3. **Linting** (if configured): `npm run lint`
+   - Fix any linting errors before committing
+
+**Commit Verification Flow:**
+```
+Edit code → Run build → Run tests → All pass? → Commit
+                ↓           ↓
+            Fix errors  Fix tests
+                ↓           ↓
+            Re-run build → Re-run tests → All pass? → Commit
+```
+
+**If you skip verification and a build/test fails after commit:**
+1. Immediately fix the issue
+2. Amend the commit or create a fix commit
+3. Never leave the repository in a broken state
 
 ---
 
