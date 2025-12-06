@@ -74,13 +74,13 @@ export function Pile({ pile, spread = false, maxVisible }: PileProps) {
     // Calculate cumulative offsets for each card
     // Each card's position is the sum of all previous cards' offsets
     const cardOffsets = spread
-        ? cards.reduce<number[]>((offsets, card, index) => {
+        ? cards.reduce<number[]>((offsets, _, index) => {
             if (index === 0) {
                 offsets.push(0);
             } else {
                 // Add previous card's offset contribution to cumulative total
-                const prevCard = cards[index - 1];
-                const prevOffset = offsets[index - 1];
+                const prevCard = cards[index - 1]!;
+                const prevOffset = offsets[index - 1]!;
                 offsets.push(prevOffset + (prevCard.faceUp ? 25 : 10));
             }
             return offsets;
