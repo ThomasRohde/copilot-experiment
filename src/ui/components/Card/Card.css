@@ -90,9 +90,9 @@
     transform: scale(0.98);
 }
 
-/* Stacked cards in tableau */
-.card[style*="--stack-offset"] {
-    margin-top: calc(var(--stack-offset) * 1px);
+/* Stacked cards in tableau - use top position for absolute positioned cards */
+.pile--spread .card {
+    top: calc(var(--stack-offset, 0) * 1px);
 }
 
 /* Mobile adjustments */
