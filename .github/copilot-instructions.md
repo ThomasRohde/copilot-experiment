@@ -82,26 +82,49 @@ This repository uses a **multi-context-window agent workflow** designed to maint
 
 ## Pre-Commit Verification (MANDATORY)
 
-**BEFORE EVERY `git commit`, you MUST run these checks in order:**
+### Step 1: Detect Project Stack
 
-1. **TypeScript/Build Check**: `npm run build` (or equivalent)
-   - If this fails, DO NOT commit
-   - Fix all errors first, then re-run the check
+Before running checks, detect available commands:
 
-2. **Unit Tests**: `npm run test` (or equivalent)
-   - If tests fail, DO NOT commit
-   - Fix failing tests before committing
+1. Read `package.json` → look for `scripts.build`, `scripts.test`, `scripts.lint`
+2. If Python: check for `pyproject.toml`, `setup.py`, or `requirements.txt`
+3. If Rust: check for `Cargo.toml`
+4. If Go: check for `go.mod`
 
-3. **Linting** (if configured): `npm run lint`
-   - Fix any linting errors before committing
+### Step 2: Run Detected Commands
 
-**Commit Verification Flow:**
+| Check | Node.js | Python | Rust | Go |
+|-------|---------|--------|------|----|
+| Build | `npm run build` | `python -m py_compile` | `cargo build` | `go build` |
+| Test | `npm test` | `pytest` | `cargo test` | `go test` |
+| Lint | `npm run lint` | `ruff check` or `flake8` | `cargo clippy` | `golangci-lint` |
+
+### Step 3: Record Results Before Commit
+
+**You MUST record each command's result:**
+
+```markdown
+#### Pre-Commit Verification
+| Command | Exit Code | Notes |
+|---------|-----------|-------|
+| npm run build | 0 | ✅ |
+| npm test | 0 | ✅ 42 tests passed |
+| npm run lint | 0 | ✅ |
 ```
-Edit code → Run build → Run tests → All pass? → Commit
-                ↓           ↓
-            Fix errors  Fix tests
-                ↓           ↓
-            Re-run build → Re-run tests → All pass? → Commit
+
+**If a command is missing from the project:**
+- Note its absence in `agent-progress.md` Technical Notes
+- Example: "No lint script configured - recommend adding eslint"
+- Do NOT silently skip
+
+### Step 4: Commit Only If All Pass
+
+```
+Detect stack → Run build → Run tests → Run lint → Record results → All pass? → Commit
+                  ↓           ↓           ↓
+              Fix errors  Fix tests  Fix lint
+                  ↓           ↓           ↓
+              Re-run    → Re-run   → Re-run  → Record → All pass? → Commit
 ```
 
 **If you skip verification and a build/test fails after commit:**
@@ -120,9 +143,33 @@ When working on this project, automatically follow these patterns:
 Before doing any coding work:
 1. Check if `agent-progress.md` exists - read it for context
 2. Check if `features.json` exists - identify current priorities
-3. Review `git log --oneline -10` for recent changes
-4. If init script exists, consider running it
-5. Announce which feature you'll work on
+3. **Run Artifact Integrity Checks** (see below)
+4. Review `git log --oneline -10` for recent changes
+5. If init script exists, run it and verify health checks pass
+6. Create a **Session Plan** (3-6 steps with status tracking)
+7. Announce which feature you'll work on
+
+### Artifact Integrity Checks (MANDATORY)
+
+Before coding, validate artifacts are consistent:
+
+**features.json checks:**
+- File exists and is valid JSON
+- `metadata.totalFeatures` matches actual feature count
+- `metadata.passingFeatures` matches count where `passes: true`
+- No features have been deleted (compare IDs to previous session if noted)
+- All required fields present: `id`, `description`, `acceptanceCriteria`, `passes`
+
+**agent-progress.md checks:**
+- File exists
+- Session numbers are monotonically increasing
+- No previous session entries have been deleted or modified
+
+**If inconsistencies found:**
+1. **STOP** - do not proceed with coding
+2. Document the inconsistency
+3. Fix the artifact or invoke `/recover-from-failure`
+4. Only continue after integrity is restored
 
 ### While Working
 
@@ -146,14 +193,20 @@ When the user indicates they're done or switching tasks:
 ### features.json - STRICT RULES
 
 **Allowed:**
+- Change `status` field (`not-started` → `in-progress` → `blocked` | `verified`)
 - Change `passes` from `false` to `true` (after verification)
 - Set `verifiedAt` timestamp
 - Set `verifiedBy` identifier
+- Set `evidenceLinks` array with paths to verification evidence
+- Set `blockedBy` (feature IDs or reason string)
+- Set `lastWorkedOn` timestamp
+- Add `notes` for context
 
 **Forbidden:**
 - Delete features
 - Edit `description` or `acceptanceCriteria`
 - Mark as passing without end-to-end testing
+- Change `status` to `verified` without evidence
 
 ### agent-progress.md - APPEND ONLY
 

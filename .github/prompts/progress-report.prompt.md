@@ -19,9 +19,12 @@ Read and analyze:
 
 **From `features.json`:**
 - Total features by category
-- Passing vs pending features
+- Features by status (`not-started`, `in-progress`, `blocked`, `verified`)
 - Priority distribution
-- Recently verified features
+- Recently verified features (check `verifiedAt`)
+- **Stale in-progress features** (check `lastWorkedOn` > 7 days ago)
+- **Blocked features** (check `blockedBy` field)
+- **Regressions** (features where `passes` flipped from `true` to `false`)
 
 **From `agent-progress.md`:**
 - Number of sessions completed
@@ -44,19 +47,30 @@ git shortlog -sn --since="1 month ago"  # contributors
 ### 2. Calculate Metrics
 
 **Completion Metrics:**
-- Overall completion: passing / total features
+- Overall completion: verified / total features
 - Completion by category
 - Completion by priority level
 
+**Status Metrics:**
+- Not started count
+- In-progress count (flag if > 3 concurrent)
+- Blocked count (flag if > 0)
+- Verified count
+
+**Health Metrics:**
+- Stale in-progress: features with `lastWorkedOn` > 7 days ago
+- Regressions: features that were passing but now fail
+- Unblocked recently: features where `blockedBy` was cleared
+
 **Velocity Metrics:**
-- Features completed per session (average)
+- Features verified per session (average)
 - Sessions per week (if timestamps available)
 - Estimated sessions to completion
 
 **Quality Metrics:**
+- Features with evidence links vs without
 - Features that passed on first verification
 - Features that required rework
-- Current blockers count
 
 ### 3. Identify Patterns
 
@@ -101,8 +115,9 @@ git shortlog -sn --since="1 month ago"  # contributors
 
 | Status | Count | Percentage |
 |--------|-------|------------|
-| ✅ Complete | X | XX% |
-| 🔄 In Progress | Y | YY% |
+| ✅ Verified | X | XX% |
+| 🔄 In-Progress | Y | YY% |
+| 🚫 Blocked | B | BB% |
 | ⏳ Not Started | Z | ZZ% |
 | **Total** | **N** | **100%** |
 
@@ -141,6 +156,28 @@ git shortlog -sn --since="1 month ago"  # contributors
 - **Commits (Last Week)**: X
 - **Commits (Last Month)**: Y
 - **Active Contributors**: Z
+
+---
+
+## ⚠️ Attention Required
+
+### Stale In-Progress Features
+
+| ID | Description | Last Worked | Days Stale |
+|----|-------------|-------------|------------|
+| F0XX | <description> | <date> | <N> days |
+
+### Blocked Features
+
+| ID | Description | Blocked By | Suggested Action |
+|----|-------------|------------|------------------|
+| F0XX | <description> | <reason/IDs> | <action> |
+
+### Regressions (Features That Flipped to Failing)
+
+| ID | Description | Was Verified | Now Status | Notes |
+|----|-------------|--------------|------------|-------|
+| F0XX | <description> | <date> | failing | <what broke> |
 
 ---
 

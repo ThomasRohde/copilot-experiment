@@ -56,14 +56,35 @@ Bridge context between agent sessions. Each agent starts fresh and uses this fil
 ## features.json
 
 ### Purpose
-Prevent premature "victory declaration" by maintaining a structured checklist of all features, with explicit pass/fail status.
+Prevent premature "victory declaration" by maintaining a structured checklist of all features, with explicit status tracking and verification evidence.
+
+### Schema Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `id` | string | ✅ | Pattern `F\d{3}` (e.g., F001) |
+| `description` | string | ✅ | Feature description |
+| `acceptanceCriteria` | string[] | ✅ | Testable criteria (min 1) |
+| `passes` | boolean | ✅ | Whether feature is verified complete |
+| `status` | enum | ✅ | `not-started`, `in-progress`, `blocked`, `verified` |
+| `verifiedAt` | string/null | - | ISO timestamp of verification |
+| `verifiedBy` | string/null | - | Identifier of verifying agent/session |
+| `evidenceLinks` | string[] | - | Paths to verification evidence files |
+| `blockedBy` | string/string[] | - | Feature IDs or reason blocking progress |
+| `lastWorkedOn` | string | - | ISO timestamp of last work |
+| `notes` | string | - | Context, gotchas, or additional info |
 
 ### Rules
 
 **Allowed Changes:**
+- Set `status` (`not-started` → `in-progress` → `blocked` | `verified`)
 - Set `passes` from `false` to `true` (after verification)
 - Set `verifiedAt` to ISO timestamp
 - Set `verifiedBy` to session identifier
+- Set `evidenceLinks` with paths to evidence files
+- Set `blockedBy` when blocked
+- Set `lastWorkedOn` timestamp
+- Add/update `notes`
 - Update `metadata.lastUpdated`
 - Update `metadata.passingFeatures` count
 
@@ -73,15 +94,23 @@ Prevent premature "victory declaration" by maintaining a structured checklist of
 - Editing `acceptanceCriteria`
 - Changing `id` or `priority`
 - Setting `passes: true` without end-to-end verification
+- Setting `status: verified` without `evidenceLinks`
 
 ### Verification Requirements
 
-Before setting `passes: true`:
+Before setting `passes: true` and `status: verified`:
 1. All acceptance criteria must be tested
 2. Tests must be end-to-end (not just unit tests)
 3. Tests must be on the actual running system
 4. Edge cases should be considered
-5. Results should be documented
+5. **Evidence must be captured and linked**
+
+### Evidence Requirements
+
+- Save evidence files to `test-results/` directory
+- Naming: `F00X-<description>.{png,log,txt}`
+- Add paths to `evidenceLinks` array in feature entry
+- Update `agent-progress.md` with verification record
 
 ### Example Update
 
@@ -90,18 +119,25 @@ Before setting `passes: true`:
 {
   "id": "F003",
   "description": "User can log in",
+  "status": "in-progress",
   "passes": false,
-  "verifiedAt": null,
-  "verifiedBy": null
+  "lastWorkedOn": "2024-01-14T10:00:00Z",
+  "notes": "Auth endpoint ready, need E2E test"
 }
 
-// After (only if verified)
+// After (only if verified with evidence)
 {
   "id": "F003",
   "description": "User can log in",
+  "status": "verified",
   "passes": true,
   "verifiedAt": "2024-01-15T14:30:00Z",
-  "verifiedBy": "coding-agent-session-5"
+  "verifiedBy": "coding-agent-session-5",
+  "evidenceLinks": [
+    "test-results/F003-login-success.png",
+    "test-results/F003-validation-error.png"
+  ],
+  "notes": "Tested Chrome/Firefox. Rate limiting works."
 }
 ```
 

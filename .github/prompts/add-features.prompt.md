@@ -47,11 +47,22 @@ Each feature must have:
     "At least 3 criteria per feature"
   ],
   "estimatedEffort": "small|medium|large",
+  "status": "not-started",
   "passes": false,
   "verifiedAt": null,
-  "verifiedBy": null
+  "verifiedBy": null,
+  "evidenceLinks": [],
+  "blockedBy": null,
+  "lastWorkedOn": null,
+  "notes": null
 }
 ```
+
+**Status values:**
+- `not-started`: Feature has not been worked on
+- `in-progress`: Currently being implemented
+- `blocked`: Cannot proceed (set `blockedBy`)
+- `verified`: Complete with evidence (set `passes: true`)
 
 ### 4. Acceptance Criteria Guidelines
 

@@ -19,19 +19,41 @@ This prompt implements the "clean state" requirement from Anthropic's long-runni
 
 ### 1. Verify Clean State
 
+**Step 1: Detect stack and available commands**
+
+Read `package.json` (or `pyproject.toml`, `Cargo.toml`, `go.mod`) to find:
+- Build command (e.g., `scripts.build`)
+- Test command (e.g., `scripts.test`)
+- Lint command (e.g., `scripts.lint`)
+
+**Step 2: Run and record each command**
+
 ```bash
 # Check for uncommitted changes
 git status
 
-# Check for linting/compile errors
-# <your-lint-command>
-# <your-build-command>
-
-# Run tests
-# <your-test-command>
+# Run detected commands (example for Node.js)
+npm run build
+npm run test
+npm run lint
 ```
 
-**If there are issues:**
+**Step 3: Record results before any commit**
+
+```markdown
+#### Pre-Commit Verification
+| Command | Exit Code | Notes |
+|---------|-----------|-------|
+| npm run build | 0 | ✅ Build succeeded |
+| npm test | 0 | ✅ 42/42 tests passed |
+| npm run lint | 0 | ✅ No issues |
+```
+
+**If a command is missing:**
+- Note in Technical Notes: "No lint script configured"
+- Do NOT silently skip
+
+**If there are failures:**
 - Fix them before proceeding
 - If unfixable, revert to last good state and document
 
@@ -65,20 +87,40 @@ For any features you worked on:
 
 1. **Run end-to-end verification** (not just unit tests)
 2. **Test as a user would** - browser, CLI, actual API calls
-3. **Only mark `passes: true`** if ALL acceptance criteria are met
+3. **Capture evidence** - logs, screenshots, command output
+4. **Only mark complete** if ALL acceptance criteria are met
 
 Update `features.json`:
 ```json
 {
+  "status": "verified",
   "passes": true,
   "verifiedAt": "<ISO timestamp>",
-  "verifiedBy": "agent-session-<date>"
+  "verifiedBy": "agent-session-<date>",
+  "evidenceLinks": [
+    "test-results/F00X-screenshot.png",
+    "test-results/F00X-console.log"
+  ],
+  "notes": "Tested in Chrome and Firefox, edge cases handled"
 }
 ```
 
-**Important**: If feature is incomplete, leave `passes: false` - it's okay!
+**Important**: If feature is incomplete, set `status: "in-progress"` and leave `passes: false` - it's okay!
 
-### 4. Update Progress File
+### 4. Complete or Park Session Plan
+
+**Every task from your session plan must be resolved:**
+
+| Status | Action Required |
+|--------|----------------|
+| `done` | No action - task complete |
+| `blocked` | Document: what's blocking, who/what can unblock, suggested next step |
+| `in-progress` | Either finish it OR convert to `blocked` with handoff notes |
+| `not-started` | Either complete it OR document why deferred |
+
+**You may NOT end a session with tasks in `in-progress` or `not-started` without explicit handoff.**
+
+### 5. Update Progress File
 
 Append a new session entry to `agent-progress.md`:
 
@@ -111,7 +153,7 @@ Append a new session entry to `agent-progress.md`:
 - <Useful commands discovered>
 ```
 
-### 5. Final Verification
+### 6. Final Verification
 
 ```bash
 # Ensure everything is committed
@@ -121,7 +163,7 @@ git status  # Should show "nothing to commit, working tree clean"
 ./init.sh && <smoke-test-command>
 ```
 
-### 6. Summary Report
+### 7. Summary Report
 
 Provide a brief handoff summary.
 
@@ -133,11 +175,25 @@ Provide a brief handoff summary.
 **Session Duration**: <time>
 **Commits Made**: <count>
 
+### Pre-Commit Verification
+| Command | Exit Code | Notes |
+|---------|-----------|-------|
+| npm run build | 0 | ✅ |
+| npm test | 0 | ✅ X tests passed |
+| npm run lint | 0 | ✅ |
+
+### Session Plan Resolution
+| # | Task | Final Status | Notes |
+|---|------|--------------|-------|
+| 1 | <task> | done | Completed |
+| 2 | <task> | done | Completed |
+| 3 | <task> | blocked | Needs API key - see notes |
+
 ### Accomplishments
-| Feature | Status | Notes |
-|---------|--------|-------|
-| F00X | ✅ Complete | Verified end-to-end |
-| F00Y | 🔄 In Progress | 80% done, needs testing |
+| Feature | Status | Evidence |
+|---------|--------|----------|
+| F00X | ✅ verified | [screenshot](test-results/F00X.png) |
+| F00Y | 🔄 in-progress | 80% done, needs E2E test |
 
 ### Files Changed
 - `path/to/file1.ts` - <what changed>
@@ -145,11 +201,11 @@ Provide a brief handoff summary.
 
 ### State Verification
 - [x] All changes committed
-- [x] No linting errors
-- [x] Tests passing
+- [x] Pre-commit checks passed and recorded
 - [x] Smoke test passing
 - [x] Progress file updated
-- [x] Features.json accurate
+- [x] Features.json accurate (with evidence links)
+- [x] Session plan resolved (no dangling tasks)
 
 ### Handoff to Next Session
 > <2-3 sentence summary of where things stand and what to do next>

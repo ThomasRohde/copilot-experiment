@@ -14,7 +14,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T09:15:00.000Z",
-            "verifiedBy": "agent-session-2"
+            "verifiedBy": "agent-session-2",
+            "status": "verified"
         },
         {
             "id": "F002",
@@ -28,7 +29,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T10:00:00.000Z",
-            "verifiedBy": "agent-session-4"
+            "verifiedBy": "agent-session-4",
+            "status": "verified"
         },
         {
             "id": "F003",
@@ -42,7 +44,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T10:00:00.000Z",
-            "verifiedBy": "agent-session-4"
+            "verifiedBy": "agent-session-4",
+            "status": "verified"
         },
         {
             "id": "F004",
@@ -56,7 +59,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T12:00:00.000Z",
-            "verifiedBy": "playwright-e2e"
+            "verifiedBy": "playwright-e2e",
+            "status": "verified"
         },
         {
             "id": "F005",
@@ -71,7 +75,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T12:00:00.000Z",
-            "verifiedBy": "playwright-e2e"
+            "verifiedBy": "playwright-e2e",
+            "status": "verified"
         },
         {
             "id": "F006",
@@ -86,7 +91,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T10:00:00.000Z",
-            "verifiedBy": "agent-session-4"
+            "verifiedBy": "agent-session-4",
+            "status": "verified"
         },
         {
             "id": "F007",
@@ -101,7 +107,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T10:00:00.000Z",
-            "verifiedBy": "agent-session-4"
+            "verifiedBy": "agent-session-4",
+            "status": "verified"
         },
         {
             "id": "F008",
@@ -114,7 +121,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T10:00:00.000Z",
-            "verifiedBy": "agent-session-4"
+            "verifiedBy": "agent-session-4",
+            "status": "verified"
         },
         {
             "id": "F009",
@@ -128,7 +136,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T10:00:00.000Z",
-            "verifiedBy": "agent-session-4"
+            "verifiedBy": "agent-session-4",
+            "status": "verified"
         },
         {
             "id": "F010",
@@ -143,7 +152,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T10:00:00.000Z",
-            "verifiedBy": "agent-session-4"
+            "verifiedBy": "agent-session-4",
+            "status": "verified"
         },
         {
             "id": "F011",
@@ -158,7 +168,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T12:00:00.000Z",
-            "verifiedBy": "playwright-e2e"
+            "verifiedBy": "playwright-e2e",
+            "status": "verified"
         },
         {
             "id": "F012",
@@ -173,7 +184,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T12:00:00.000Z",
-            "verifiedBy": "playwright-e2e"
+            "verifiedBy": "playwright-e2e",
+            "status": "verified"
         },
         {
             "id": "F013",
@@ -188,7 +200,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T10:30:00.000Z",
-            "verifiedBy": "agent-session-3"
+            "verifiedBy": "agent-session-3",
+            "status": "verified"
         },
         {
             "id": "F014",
@@ -202,7 +215,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T10:00:00.000Z",
-            "verifiedBy": "agent-session-4"
+            "verifiedBy": "agent-session-4",
+            "status": "verified"
         },
         {
             "id": "F015",
@@ -217,7 +231,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T12:00:00.000Z",
-            "verifiedBy": "playwright-e2e"
+            "verifiedBy": "playwright-e2e",
+            "status": "verified"
         },
         {
             "id": "F016",
@@ -232,7 +247,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T12:00:00.000Z",
-            "verifiedBy": "playwright-e2e"
+            "verifiedBy": "playwright-e2e",
+            "status": "verified"
         },
         {
             "id": "F017",
@@ -247,7 +263,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T12:00:00.000Z",
-            "verifiedBy": "playwright-e2e"
+            "verifiedBy": "playwright-e2e",
+            "status": "verified"
         },
         {
             "id": "F018",
@@ -262,7 +279,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T10:12:00.000Z",
-            "verifiedBy": "agent-session-6"
+            "verifiedBy": "agent-session-6",
+            "status": "verified"
         },
         {
             "id": "F019",
@@ -276,7 +294,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T12:00:00.000Z",
-            "verifiedBy": "playwright-e2e"
+            "verifiedBy": "playwright-e2e",
+            "status": "verified"
         },
         {
             "id": "F020",
@@ -291,7 +310,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T10:00:00.000Z",
-            "verifiedBy": "agent-session-4"
+            "verifiedBy": "agent-session-4",
+            "status": "verified"
         },
         {
             "id": "F021",
@@ -306,7 +326,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T10:00:00.000Z",
-            "verifiedBy": "agent-session-4"
+            "verifiedBy": "agent-session-4",
+            "status": "verified"
         },
         {
             "id": "F022",
@@ -321,7 +342,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T10:00:00.000Z",
-            "verifiedBy": "agent-session-4"
+            "verifiedBy": "agent-session-4",
+            "status": "verified"
         },
         {
             "id": "F023",
@@ -336,7 +358,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T12:00:00.000Z",
-            "verifiedBy": "playwright-e2e"
+            "verifiedBy": "playwright-e2e",
+            "status": "verified"
         },
         {
             "id": "F024",
@@ -351,7 +374,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T10:12:00.000Z",
-            "verifiedBy": "agent-session-6"
+            "verifiedBy": "agent-session-6",
+            "status": "verified"
         },
         {
             "id": "F025",
@@ -365,7 +389,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T09:15:00.000Z",
-            "verifiedBy": "agent-session-2"
+            "verifiedBy": "agent-session-2",
+            "status": "verified"
         },
         {
             "id": "F026",
@@ -379,7 +404,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T09:15:00.000Z",
-            "verifiedBy": "agent-session-2"
+            "verifiedBy": "agent-session-2",
+            "status": "verified"
         },
         {
             "id": "F027",
@@ -394,7 +420,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T09:15:00.000Z",
-            "verifiedBy": "agent-session-2"
+            "verifiedBy": "agent-session-2",
+            "status": "verified"
         },
         {
             "id": "F028",
@@ -408,7 +435,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T09:15:00.000Z",
-            "verifiedBy": "agent-session-2"
+            "verifiedBy": "agent-session-2",
+            "status": "verified"
         },
         {
             "id": "F029",
@@ -422,7 +450,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T10:00:00.000Z",
-            "verifiedBy": "agent-session-4"
+            "verifiedBy": "agent-session-4",
+            "status": "verified"
         },
         {
             "id": "F030",
@@ -436,7 +465,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T10:00:00.000Z",
-            "verifiedBy": "agent-session-4"
+            "verifiedBy": "agent-session-4",
+            "status": "verified"
         },
         {
             "id": "F031",
@@ -451,7 +481,8 @@
             ],
             "passes": true,
             "verifiedAt": "2025-12-05T10:30:00.000Z",
-            "verifiedBy": "agent-session-3"
+            "verifiedBy": "agent-session-3",
+            "status": "verified"
         },
         {
             "id": "F032",
@@ -471,7 +502,8 @@
             "estimatedEffort": "medium",
             "passes": true,
             "verifiedAt": "2025-12-05T16:45:00.000Z",
-            "verifiedBy": "agent-session-8"
+            "verifiedBy": "agent-session-8",
+            "status": "verified"
         },
         {
             "id": "F033",
@@ -490,7 +522,8 @@
             "estimatedEffort": "small",
             "passes": true,
             "verifiedAt": "2025-12-05T16:40:00.000Z",
-            "verifiedBy": "agent-session-8"
+            "verifiedBy": "agent-session-8",
+            "status": "verified"
         },
         {
             "id": "F034",
@@ -509,7 +542,8 @@
             "estimatedEffort": "medium",
             "passes": true,
             "verifiedAt": "2025-12-05T16:46:00.000Z",
-            "verifiedBy": "agent-session-8"
+            "verifiedBy": "agent-session-8",
+            "status": "verified"
         },
         {
             "id": "F035",
@@ -528,7 +562,8 @@
             "estimatedEffort": "small",
             "passes": true,
             "verifiedAt": "2025-12-05T16:32:00.000Z",
-            "verifiedBy": "agent-session-8"
+            "verifiedBy": "agent-session-8",
+            "status": "verified"
         },
         {
             "id": "F036",
@@ -548,7 +583,8 @@
             "estimatedEffort": "medium",
             "passes": true,
             "verifiedAt": "2025-12-05T16:35:00.000Z",
-            "verifiedBy": "agent-session-8"
+            "verifiedBy": "agent-session-8",
+            "status": "verified"
         },
         {
             "id": "F037",
@@ -567,7 +603,8 @@
             "estimatedEffort": "medium",
             "passes": true,
             "verifiedAt": "2025-12-05T16:46:00.000Z",
-            "verifiedBy": "agent-session-8"
+            "verifiedBy": "agent-session-8",
+            "status": "verified"
         },
         {
             "id": "F038",
@@ -586,7 +623,8 @@
             "estimatedEffort": "small",
             "passes": true,
             "verifiedAt": "2025-12-05T16:47:00.000Z",
-            "verifiedBy": "agent-session-8"
+            "verifiedBy": "agent-session-8",
+            "status": "verified"
         },
         {
             "id": "F039",
@@ -605,7 +643,8 @@
             "estimatedEffort": "medium",
             "passes": true,
             "verifiedAt": "2025-12-05T16:48:00.000Z",
-            "verifiedBy": "agent-session-8"
+            "verifiedBy": "agent-session-8",
+            "status": "verified"
         },
         {
             "id": "F040",
@@ -624,7 +663,8 @@
             "estimatedEffort": "small",
             "passes": true,
             "verifiedAt": "2025-12-05T17:25:00.000Z",
-            "verifiedBy": "agent-session-11"
+            "verifiedBy": "agent-session-11",
+            "status": "verified"
         },
         {
             "id": "F041",
@@ -644,7 +684,8 @@
             "estimatedEffort": "medium",
             "passes": true,
             "verifiedAt": "2025-12-05T17:23:00.000Z",
-            "verifiedBy": "agent-session-11"
+            "verifiedBy": "agent-session-11",
+            "status": "verified"
         },
         {
             "id": "F042",
@@ -664,7 +705,8 @@
             "estimatedEffort": "small",
             "passes": true,
             "verifiedAt": "2025-12-05T17:22:00.000Z",
-            "verifiedBy": "agent-session-11"
+            "verifiedBy": "agent-session-11",
+            "status": "verified"
         },
         {
             "id": "F043",
@@ -684,7 +726,8 @@
             "estimatedEffort": "small",
             "passes": true,
             "verifiedAt": "2025-12-05T17:20:00.000Z",
-            "verifiedBy": "agent-session-11"
+            "verifiedBy": "agent-session-11",
+            "status": "verified"
         },
         {
             "id": "F044",
@@ -704,7 +747,8 @@
             "estimatedEffort": "medium",
             "passes": true,
             "verifiedAt": "2025-12-05T18:00:00.000Z",
-            "verifiedBy": "agent-session-12-manual"
+            "verifiedBy": "agent-session-12-manual",
+            "status": "verified"
         },
         {
             "id": "F045",
@@ -723,7 +767,8 @@
             "estimatedEffort": "small",
             "passes": true,
             "verifiedAt": "2025-12-05T17:24:00.000Z",
-            "verifiedBy": "agent-session-11"
+            "verifiedBy": "agent-session-11",
+            "status": "verified"
         }
     ],
     "metadata": {

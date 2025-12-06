@@ -39,7 +39,7 @@ Read these files in order:
 2. **`features.json`** - Feature completion status
    - How many features are passing vs pending?
    - What's the highest priority incomplete feature?
-   - Are there any features marked as in-progress?
+   - Are there any features marked as `in-progress` or `blocked`?
 
 3. **Git history** - Recent changes
    ```bash
@@ -48,26 +48,50 @@ Read these files in order:
    git diff --stat HEAD~3  # What changed recently
    ```
 
-### 3. Start the Environment
+### 3. Artifact Integrity Checks (MANDATORY)
 
-**IMPORTANT**: The init script starts a dev server. When calling `run_in_terminal`, you do NOT need to set `isBackground: true` - the init script handles backgrounding the server automatically and will return control.
+Before proceeding, validate:
+
+**features.json:**
+- [ ] File is valid JSON
+- [ ] `metadata.totalFeatures` == actual feature count
+- [ ] `metadata.passingFeatures` == count where `passes: true`
+- [ ] All features have required fields: `id`, `description`, `acceptanceCriteria`, `passes`
+- [ ] No features from previous session are missing (compare with `agent-progress.md` if noted)
+
+**agent-progress.md:**
+- [ ] Session numbers are sequential (no gaps or duplicates)
+- [ ] Previous session entries are intact (not deleted/modified)
+
+**If any check fails:**
+1. Document the inconsistency in output
+2. Fix immediately before any coding work
+3. If unfixable, invoke `/recover-from-failure`
+
+### 4. Start the Environment
+
+**IMPORTANT**: The init script performs health checks. If they fail, do NOT proceed.
 
 ```bash
-# Run the init script (it backgrounds the dev server automatically)
+# Run the init script (it handles server startup and health checks)
 ./init.sh  # or .\init.ps1 on Windows
 ```
 
-If init script doesn't exist or fails:
-- Document the issue
-- Attempt to start the dev environment manually
-- Create/fix the init script as first priority
+The init script will:
+1. Kill any stale dev servers on the target port
+2. Install dependencies if missing
+3. Run type check, lint, and tests
+4. Start dev server in background
+5. Wait for port to be ready (health check)
+6. Run a minimal smoke test
 
-**Note**: If you need to start just the dev server separately, use `run_in_terminal` with `isBackground: true`:
-```
-npm run dev  # with isBackground: true
-```
+**If init script fails:**
+- **STOP** - Do not start new features
+- Document the failure
+- Invoke `/recover-from-failure` to diagnose and fix
+- Only continue after init passes completely
 
-### 4. Smoke Test
+### 5. Smoke Test
 
 Before implementing new features, verify basic functionality:
 
@@ -81,7 +105,28 @@ If smoke test fails:
 - Investigate and fix the existing issue first
 - Document what was broken in progress file
 
-### 5. Select Next Task
+### 6. Create Session Plan
+
+Before starting work, create a plan with 3-6 concrete steps:
+
+```markdown
+#### Session Plan
+| # | Task | Status |
+|---|------|--------|
+| 1 | <specific task> | in-progress |
+| 2 | <specific task> | not-started |
+| 3 | <specific task> | not-started |
+```
+
+**Status values:** `not-started`, `in-progress`, `blocked`, `done`
+
+**Rules:**
+- Only ONE task `in-progress` at a time
+- Update status as you complete each task
+- If blocked, note the reason and move to next task
+- At session end, all tasks must be `done` or explicitly `blocked` with owner/next-step
+
+### 7. Select Next Task
 
 Based on your review:
 
@@ -89,7 +134,7 @@ Based on your review:
 2. If there are incomplete in-progress features → Complete them
 3. Otherwise → Pick highest priority feature from `features.json`
 
-### 6. Announce Your Plan and Begin
+### 8. Announce Your Plan and Begin
 
 Before making changes, state:
 - Which feature you'll work on (by ID and description)
@@ -108,19 +153,32 @@ After completing the startup routine, provide a brief status report and **begin 
 **Timestamp**: <current time>
 **Working Directory**: <path>
 
+### Artifact Integrity
+- [x] features.json valid (X features, Y passing)
+- [x] Metadata counts match actual
+- [x] agent-progress.md sessions sequential
+- [x] No missing features detected
+
 ### Environment Status
-- [x] Progress file read
-- [x] Features file read  
-- [x] Git history reviewed
 - [x] Init script executed
+- [x] Health checks passed
 - [x] Smoke test passed
 
 ### Project Status
 - **Total Features**: X
 - **Passing**: Y (Z%)
+- **In-Progress**: N
+- **Blocked**: M
 - **Last Session**: <date> - <summary>
 
-### Current Session Plan
+### Session Plan
+| # | Task | Status |
+|---|------|--------|
+| 1 | <task> | in-progress |
+| 2 | <task> | not-started |
+| 3 | <task> | not-started |
+
+### Current Task
 **Target Feature**: F00X - <description>
 **Approach**: <brief plan>
 **Estimated Scope**: <small/medium/large>
